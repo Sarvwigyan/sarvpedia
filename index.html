@@ -1,247 +1,768 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Clarity tracking code for https://sarvstore.netlify.app/ -->
-    <!-- Learning Note: This script tracks user behavior anonymously via Microsoft Clarity. It's optional but great for analytics on how people use your site. -->
-    <script>
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "sblm2l3woh");
-    </script>
-    <!-- Charset & Viewport -->
-    <!-- Learning Note: UTF-8 handles international text (like Hindi/Sanskrit). Viewport makes it mobile-friendly. -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title (Max ~60 characters recommended) -->
-    <title>Sarvstore – Technology, Science & Books by Sarvwigyan</title>
-    <!-- Meta Description (Max ~160 chars, concise and catchy) -->
-    <meta name="description" content="Explore Sarvstore by Sarvwigyan – your hub for books, AI tools, science, and open knowledge. Discover innovation and technology in one place.">
-    <!-- Keywords (Not heavily used now, but still okay) -->
-    <meta name="keywords" content="Sarvstore, Sarvwigyan, science, AI, technology, books, open knowledge, education, innovation">
-    <!-- Author & Robots -->
-    <meta name="author" content="Sarvwigyan">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="theme-color" content="#0a192f">
-    <!-- Bing Webmaster Verification -->
-    <meta name="msvalidate.01" content="C32F6CD84659D81F2BFD84929E418D05" />
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://sarvstore.netlify.app/">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://sarvwigyan.github.io/resources/Sarvstore.png" sizes="32x32">
-    <!-- Manifest -->
-    <!-- Learning Note: For PWA (Progressive Web App) - lets users "install" your site like an app. -->
-    <link rel="manifest" href="manifest.json">
-    <!-- Fonts & Icons -->
-    <!-- Learning Note: Google Fonts for Roboto (clean, readable). Font Awesome for icons like chevrons and checks. -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
-    <!-- Open Graph for Facebook & LinkedIn -->
-    <!-- Learning Note: These metas make your site look good when shared on social media. -->
-    <meta property="og:title" content="Sarv Store – The Universal Store of Knowledge">
-    <meta property="og:description" content="Books, AI tools, tech projects, and more – all at Sarv Store by Sarvwigyan.">
-    <meta property="og:image" content="https://sarvwigyan.github.io/resources/Sarvstore.png">
-    <meta property="og:url" content="https://sarvwigyan.github.io/sarvstore/">
-    <meta property="og:type" content="website">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sarv Store – The Universal Store of Knowledge">
-    <meta name="twitter:description" content="A one-stop platform by Sarvwigyan for books, science, AI, and education.">
-    <meta name="twitter:image" content="https://sarvwigyan.github.io/resources/Sarvstore.png">
-    <!-- Structured Data (JSON-LD for SEO) -->
-    <!-- Learning Note: Helps search engines understand your site as an Organization. -->
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Sarv Store",
-          "url": "https://sarvstore.netlify.app/",
-          "logo": "https://sarvwigyan.github.io/resources/Sarvstore.png",
-          "sameAs": [
-            "https://github.com/sarvwigyan",
-            "https://sarvwigyan.github.io/"
-          ],
-          "description": "Sarv Store by Sarvwigyan is a universal platform offering science, AI, books, and educational resources."
+<!-- Essential Meta -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Sarvpedia – Explore Universal Knowledge</title>
+<meta name="description" content="Sarvpedia by Sarvwigyan is a free knowledge platform that explores science, technology, philosophy, education, and innovation in both Hindi and English.">
+<meta name="keywords" content="Sarvpedia, Sarvwigyan, Sarvstore, education, science, technology, books, innovation, free knowledge, open resources, Indian science, Hindi content">
+<meta name="author" content="Sarvwigyan">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="theme-color" content="#0a192f">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://sarvpedia.netlify.app/">
+
+<!-- Favicon & Manifest -->
+<link rel="icon" type="image/png" href="Resources/Sarvpedia.png" sizes="32x32">
+<link rel="manifest" href="Resources/manifest.json">
+
+<!-- Fonts (if used) -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sarvpedia – Universal Knowledge Platform by Sarvwigyan">
+<meta property="og:description" content="Explore a vast range of knowledge on science, technology, education, and culture from Sarvwigyan through Sarvpedia.">
+<meta property="og:url" content="https://sarvpedia.netlify.app/">
+<meta property="og:image" content="https://sarvwigyan.github.io/resources/Sarvpedia.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sarvpedia – A Free Knowledge Movement">
+<meta name="twitter:description" content="Sarvpedia by Sarvwigyan offers free access to knowledge in science, tech, and education.">
+<meta name="twitter:image" content="https://sarvwigyan.github.io/resources/Sarvpedia.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld18hcsAAAAAHxfjxcXSFKegmgP1azhTiJ_2Atg"></script>
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e2a44, #34495e);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1e2a44;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header-container img {
+            height: 2.5em; /* Match h1 font size for visual height */
+            width: auto; /* Maintain aspect ratio */
+            vertical-align: middle; /* Fine-tune alignment */
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: #3498db;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(52, 152, 219, 0.5);
+            padding-bottom: 8px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #ddd;
+            text-align: justify;
+        }
+
+        .search-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        #search-bar {
+            width: 100%;
+            padding: 15px 40px 15px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #search-bar:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        #search-bar::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #clear-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 1em;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        #clear-button:hover {
+            background: #c0392b;
+        }
+
+        #suggestions-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .suggestion-item {
+            padding: 4px 10px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            font-size: 1em;
+        }
+
+        .suggestion-item:hover {
+            background: #e8f4ff;
+        }
+
+        .suggestion-item.highlight {
+            background: #e8f4ff;
+            font-weight: bold;
+        }
+
+        .suggestion-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            background: transparent;
+            color: #333;
+            border: none;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .suggestion-button:hover {
+            background: #2980b9;
+            color: #fff;
+        }
+
+        .suggestion-button.focused {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .explore-button {
+            background: #3498db;
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: background 0.3s ease;
+        }
+
+        .explore-button:hover {
+            background: #2980b9;
+        }
+
+        .card-section {
+            margin: 30px 0;
+            padding: 20px 0;
+        }
+
+        .card-section h2 {
+            font-size: 1.8em;
+            color: #3498db;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #3498db rgba(255, 255, 255, 0.1);
+        }
+
+        .card-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .card-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .card-container::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 4px;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #fff;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: break-word;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #ddd;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+            line-height: 1.4em;
+            overflow: hidden;
+        }
+
+        .card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-top: auto;
+        }
+
+        .card a:hover {
+            color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .header-container img { height: 2em; width: auto; }
+            .container { width: 95%; padding: 20px; }
+            .section h2 { font-size: 1.5em; }
+            .section p { font-size: 1em; }
+            #search-bar { font-size: 1em; padding: 12px 40px 12px 15px; }
+            .explore-button { font-size: 1em; padding: 10px 20px; }
+            #clear-button { width: 20px; height: 20px; font-size: 0.9em; }
+            .card { width: 200px; min-height: 180px; }
+            .card h3 { font-size: 1.1em; }
+            .card p { font-size: 0.85em; line-height: 1.3em; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.5em; }
+            .header-container img { height: 1.5em; width: auto; }
+            .card { width: 160px; min-height: 160px; padding: 15px; }
+            .card h3 { font-size: 1em; }
+            .card p { font-size: 0.8em; line-height: 1.2em; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <!-- Main Header: Logo, Search Bar, Settings Gear -->
-    <!-- Learning Note: Sticky header stays on top when scrolling. Flexbox aligns items nicely. -->
-    <div class="header">
-        <div class="header-logo">
-            <img src="https://sarvwigyan.github.io/resources/Sarvstore.png" style="width: auto; height: 1.5em;" alt="Sarv Store logo">
-            <h1 style="font-size: larger;">Sarvstore</h1>
+    <header>
+        <div class="header-container">
+            <img src="Resources/Sarvpedia.png" alt="Sarvpedia Logo" class="logo-img">
+            <h1>Sarvpedia</h1>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search apps..." id="searchInput" aria-label="Search apps">
-        </div>
-        <div class="settings-icon" id="settingsIcon" role="button" aria-label="Open settings"><span class="gear-icon">⚙️</span></div>
-    </div>
+    </header>
 
-    <!-- Navigation Tabs -->
-    <!-- Learning Note: ARIA roles for accessibility (screen readers). Tabs switch sections via JS. CodeX tab removed. -->
-    <div class="tabs" role="tablist">
-        <div class="tab-list">
-            <div class="tab active" data-tab="all" role="tab" aria-selected="true" tabindex="0">All</div>
-            <div class="tab" data-tab="books" role="tab" aria-selected="false" tabindex="0">Books</div>
-            <div class="tab" data-tab="games" role="tab" aria-selected="false" tabindex="0">Games</div>
-            <div class="tab" data-tab="productivity" role="tab" aria-selected="false" tabindex="0">Productivity</div>
-            <div class="tab" data-tab="recent" role="tab" aria-selected="false" tabindex="0">Recently Viewed</div>
-            <div class="tab hidden" data-tab="favorites" role="tab" aria-selected="false" tabindex="0">Favorites</div>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-bar" oninput="debouncedFilterSuggestions()" placeholder="Search...">
+            <button id="clear-button" onclick="clearSearch()">×</button>
+            <div id="suggestions-list"></div>
         </div>
-    </div>
-
-    <!-- Main Content Sections -->
-    <!-- Learning Note: Each .section is hidden/shown by JS. Grid layout for cards is responsive. -->
-    <div class="content">
-        <!-- All Section (Active by Default) -->
-        <div class="section active" id="all" role="tabpanel" aria-labelledby="all-tab">
-            <h2 class="section-title">All Apps</h2>
-            <div class="card-grid" id="allGrid"></div>
-            <div class="no-results" id="allNoResults">No results found</div>
+        <div class="section">
+            <h2>Empowering Humanity Through Knowledge</h2>
+            <p>
+                Welcome to <i><strong>Sarvpedia!</strong></i> Your gateway to a universe of wisdom, inspired by a mission to uplift humanity. Our AI-powered search connects you to insights on science, elements, culture, and solutions for global challenges—sustainability, health, and unity. Explore topics like renewable energy, medical breakthroughs, or cultural heritage, and join a global quest for progress. Type any term to unlock curated, relevant results instantly!
+            </p>
         </div>
-
-        <!-- Books Section (With Filter Bar) -->
-        <!-- Learning Note: Added filter bar here for books only. JS handles dropdowns and filtering. -->
-        <div class="section" id="books" role="tabpanel" aria-labelledby="books-tab">
-            <h2 class="section-title">Books</h2>
-            <div class="books-filter-bar">
-                <label for="booksFilter" class="filter-label">📚 Filter:</label>
-                <div class="custom-select-wrapper">
-                    <select id="booksFilter" onchange="handleMainFilterChange()" aria-label="Filter books">
-                        <option value="">All Categories</option>
-                        <option value="language">Language</option>
-                        <option value="genre">Genre</option>
-                        <option value="author">Author</option>
-                    </select>
-                    <i class="fas fa-chevron-down filter-dropdown-icon" id="mainFilterArrow" aria-hidden="true"></i>
-                </div>
-                <div class="custom-select-wrapper" id="languageFilterWrapper" style="display: none;">
-                    <div class="multi-select-trigger" onclick="toggleLanguageDropdown()">
-                        <span id="selectedLanguagesLabel">Select Language</span>
-                        <i class="fas fa-chevron-down filter-dropdown-icon rotate-on-open" id="langDropdownArrow"></i>
-                    </div>
-                    <div class="multi-select-dropdown" id="languageCheckboxes">
-                        <label><input type="checkbox" id="selectAllLanguages" onchange="toggleAllLanguages(this)"> Select All Languages</label>
-                        <label><input type="checkbox" class="lang-checkbox" value="english"> English</label>
-                        <label><input type="checkbox" class="lang-checkbox" value="hindi"> Hindi</label>
-                        <label><input type="checkbox" class="lang-checkbox" value="sanskrit"> Sanskrit</label>
-                    </div>
-                </div>
-            </div>
-            <div class="card-grid" id="booksGrid"></div>
-            <div class="no-results" id="booksNoResults">No results found</div>
-        </div>
-
-        <!-- Games Section -->
-        <div class="section" id="games" role="tabpanel" aria-labelledby="games-tab">
-            <h2 class="section-title">Games</h2>
-            <div class="card-grid" id="gamesGrid"></div>
-            <div class="no-results" id="gamesNoResults">No results found</div>
-        </div>
-
-        <!-- Productivity Section -->
-        <div class="section" id="productivity" role="tabpanel" aria-labelledby="productivity-tab">
-            <h2 class="section-title">Productivity</h2>
-            <div class="card-grid" id="productivityGrid"></div>
-            <div class="no-results" id="productivityNoResults">No results found</div>
-        </div>
-
-        <!-- Recently Viewed Section -->
-        <div class="section" id="recent" role="tabpanel" aria-labelledby="recent-tab">
-            <h2 class="section-title">Recently Viewed</h2>
-            <div class="card-grid" id="recentGrid"></div>
-            <div class="no-results" id="recentNoResults">No recently viewed items</div>
-        </div>
-
-        <!-- Favorites Section (Hidden by Default) -->
-        <div class="section" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
-            <h2 class="section-title">Favorites</h2>
-            <div class="card-grid" id="favoritesGrid"></div>
-            <div class="no-results" id="favoritesNoResults">No favorite items yet</div>
-        </div>
-
-        <!-- Featured Section (Shows Under All) -->
-        <!-- Learning Note: Horizontal scroll for featured items. CSS hides it unless "All" is active. -->
-        <div class="featured-section">
-            <h2 class="section-title">Featured Apps</h2>
-            <div class="card-grid" id="featuredGrid"></div>
-        </div>
-    </div>
-
-    <!-- Detail View Modal (For Item Details) -->
-    <!-- Learning Note: Role="dialog" for accessibility. JS populates this on card click. -->
-    <div class="detail-view" id="detailView" role="dialog" aria-modal="true">
-        <button class="close-btn" id="closeBtn" aria-label="Close details">×</button>
-        <div class="detail-container">
-            <div class="detail-header">
-                <img class="detail-logo" id="detailLogo" src="" alt="Selected app logo">
-                <div class="detail-info">
-                    <div class="detail-title" id="detailTitle"></div>
-                    <div class="detail-type" id="detailType"></div>
-                    <div class="detail-verified" id="detailVerified"></div>
-                    <button class="detail-download" id="detailDownload">Download</button>
-                </div>
-            </div>
-            <div class="detail-description">
-                <div class="detail-short-desc" id="detailShortDesc"></div>
-                <div class="detail-long-desc" id="detailLongDesc"></div>
-                <div class="detail-images" id="detailImages"></div>
+        <button class="explore-button" onclick="Expsarvwigyan()">Explore Sarvwigyan</button>
+        <div class="card-section">
+            <h2>Discover More</h2>
+            <div class="card-container" id="card-container">
+                <!-- Cards will be dynamically inserted here -->
             </div>
         </div>
     </div>
 
-    <!-- Book Viewer Modal (For PDFs) -->
-    <!-- Learning Note: Iframe embeds PDF viewer. JS sets src on download click for books. -->
-    <div class="book-modal" id="bookModal" role="dialog" aria-modal="true">
-        <div class="book-modal-content">
-            <button class="book-modal-close" id="bookModalClose" aria-label="Close book viewer">×</button>
-            <iframe id="bookIframe" class="book-iframe" title="Book viewer"></iframe>
-        </div>
-    </div>
-
-    <!-- Overlay (Darkens Background for Modals) -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Settings Modal -->
-    <!-- Learning Note: Theme selector and favorites toggle. JS saves to localStorage. -->
-    <div class="settings-window" id="settingsWindow" role="dialog" aria-modal="true">
-        <h2>Settings</h2>
-        <div class="settings-option">
-            <label for="theme">Theme</label>
-            <select id="theme" aria-label="Select theme">
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-                <option value="pure">Pure</option>
-            </select>
-        </div>
-        <div class="settings-option">
-            <label for="enableFavorites">Enable Favorites Tab</label>
-            <input type="checkbox" id="enableFavorites" aria-label="Enable Favorites tab">
-        </div>
-        <button id="saveSettings">Save</button>
-    </div>
-
-    <!-- Footer -->
-    <!-- Learning Note: Simple links - make them real hrefs later for About/Contact pages. -->
     <footer>
-        <p>© 2023 Sarv Store. All rights reserved.</p>
-        <nav>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Help</a>
-        </nav>
+        <p>Copyright © Sarvwigyan - Sarvpedia. All Rights Reserved.</p>
     </footer>
 
-    <!-- Load Main Script -->
-    <!-- Learning Note: script.js handles all dynamic stuff: tabs, search, modals, data rendering. -->
-    <script src="script.js"></script>
+    <!-- Load data files -->
+    <script src="elements.js"></script>
+    <script src="cricket.js"></script>
+
+    <script>
+        // Fallback data in case elements.js and cricket.js fail
+        const fallbackData = [
+            {
+                title: "Sample Topic 1",
+                description: "Explore interesting facts about science and technology.",
+                link: "https://sarvwigyan.github.io/",
+                tags: ["science", "technology"]
+            },
+            {
+                title: "Sample Topic 2",
+                description: "Learn about cultural heritage and its importance.",
+                link: "https://sarvwigyan.github.io/",
+                tags: ["culture", "heritage"]
+            }
+        ];
+
+        // Initialize data array
+        let data = [];
+        try {
+            if (typeof elementsData !== 'undefined' && Array.isArray(elementsData)) {
+                data = [...data, ...elementsData];
+            }
+            if (typeof cricketData !== 'undefined' && Array.isArray(cricketData)) {
+                data = [...data, ...cricketData];
+            }
+            if (data.length === 0) {
+                console.warn('No valid data from elements.js or cricket.js. Using fallback data.');
+                data = fallbackData;
+            }
+        } catch (error) {
+            console.error('Error initializing data:', error.message);
+            data = fallbackData;
+            document.getElementById('suggestions-list').style.display = 'block';
+            document.getElementById('suggestions-list').innerHTML = '<div class="suggestion-item">Using fallback data due to loading issues.</div>';
+            setTimeout(() => {
+                document.getElementById('suggestions-list').style.display = 'none';
+            }, 3000);
+        }
+
+        // Expanded synonym dictionary
+        const synonyms = {
+            "gas": ["vapor", "gaseous", "air"],
+            "metal": ["metallic", "element", "alloy"],
+            "radioactive": ["nuclear", "radiant", "unstable"],
+            "light": ["lightweight", "low-density", "featherweight"],
+            "heavy": ["dense", "weighty", "massive"],
+            "toxic": ["poisonous", "harmful", "dangerous"],
+            "noble": ["inert", "unreactive", "stable"],
+            "halogen": ["reactive", "chemical"],
+            "lanthanide": ["rare earth", "lanthanoid"],
+            "actinide": ["radioactive series", "actinoid"],
+            "synthetic": ["artificial", "essential"],
+            "transition": ["metallic", "versatile"],
+            "cricket": ["game", "batting", "sport"]
+        };
+
+        // Search history tracking
+        let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+        // Tokenize query for multi-word searches
+        function tokenizeQuery(query) {
+            return query.toLowerCase().split(/\s+/).filter(token => token.length > 0);
+        }
+
+        // Advanced fuzzy matching with Levenshtein distance
+        function levenshteinDistance(a, b) {
+            const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+            for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
+            for (let j = 0; j <= b.length; j++) matrix[j][0] = j;
+            
+            for (let j = 1; j <= b.length; j++) {
+                for (let i = 1; i <= a.length; i++) {
+                    const indicator = a[i - 1] === b[j - 1] ? 0 : 1;
+                    matrix[j][i] = Math.min(
+                        matrix[j][i - 1] + 1, // deletion
+                        matrix[j - 1][i] + 1, // insertion
+                        matrix[j - 1][i - 1] + indicator // substitution
+                    );
+                }
+            }
+            return matrix[b.length][a.length];
+        }
+
+        // Enhanced relevance scoring with AI-like features
+        function calculateRelevance(item, queryTokens) {
+            let totalScore = 0;
+
+            queryTokens.forEach(query => {
+                // Title matching
+                const title = item.title.toLowerCase();
+                const titleExact = title.includes(query) ? 100 : 0;
+                const titleLevenshtein = levenshteinDistance(title, query);
+                const titleScore = titleExact + (query.length / (titleLevenshtein + 1)) * 20;
+
+                // Tag matching
+                let tagScore = 0;
+                item.tags.forEach(tag => {
+                    const tagExact = tag.toLowerCase() === query ? 50 : 0;
+                    const tagLevenshtein = levenshteinDistance(tag, query);
+                    tagScore += tagExact + (query.length / (tagLevenshtein + 1)) * 10;
+
+                    // Synonym matching
+                    if (synonyms[tag]) {
+                        synonyms[tag].forEach(syn => {
+                            if (syn === query) tagScore += 30;
+                            const synLevenshtein = levenshteinDistance(syn, query);
+                            tagScore += (query.length / (synLevenshtein + 1)) * 5;
+                        });
+                    }
+                });
+
+                // Description matching
+                const desc = item.description.toLowerCase();
+                const descExact = desc.includes(query) ? 80 : 0;
+                const descLevenshtein = levenshteinDistance(desc, query);
+                const descScore = descExact + (query.length / (descLevenshtein + 1)) * 15;
+
+                // Context-based boost
+                let contextBoost = 0;
+                if (queryTokens.length > 1) {
+                    const queryPhrase = queryTokens.join(' ');
+                    if (item.tags.join(' ').toLowerCase().includes(queryPhrase) ||
+                        item.description.toLowerCase().includes(queryPhrase)) {
+                        contextBoost += 50;
+                    }
+                }
+
+                totalScore += titleScore + tagScore + descScore + contextBoost;
+            });
+
+            // History-based boost
+            const historyBoost = getHistoryBoost(queryTokens);
+            totalScore += historyBoost;
+
+            // Penalize less relevant results
+            if (totalScore > 0 && queryTokens.length > 1) {
+                const matchedTokens = queryTokens.filter(token => 
+                    item.title.toLowerCase().includes(token) ||
+                    item.tags.some(tag => tag.toLowerCase().includes(token)) ||
+                    item.description.toLowerCase().includes(token)
+                ).length;
+                totalScore *= (matchedTokens / queryTokens.length); // Weight by token coverage
+            }
+
+            return totalScore;
+        }
+
+        // Boost scores based on search history
+        function getHistoryBoost(queryTokens) {
+            let boost = 0;
+            queryTokens.forEach(token => {
+                const historyItem = searchHistory.find(h => h.query.toLowerCase().includes(token));
+                if (historyItem) {
+                    boost += historyItem.count * 15; // Weight by frequency
+                    const timeDiff = Date.now() - historyItem.timestamp;
+                    if (timeDiff < 24 * 60 * 60 * 1000) boost += 25; // Recent search boost
+                    if (timeDiff < 7 * 24 * 60 * 60 * 1000) boost += 10; // Week-long relevance
+                }
+            });
+            return boost;
+        }
+
+        // Add to search history
+        function addToSearchHistory(query) {
+            const existing = searchHistory.find(item => item.query.toLowerCase() === query.toLowerCase());
+            if (existing) {
+                existing.count++;
+                existing.timestamp = Date.now();
+            } else {
+                searchHistory.push({ query, count: 1, timestamp: Date.now() });
+            }
+            // Keep only last 50 searches to manage storage
+            searchHistory = searchHistory.sort((a, b) => b.timestamp - a.timestamp).slice(0, 50);
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+        }
+
+        // Filter and display suggestions
+        function filterSuggestions() {
+            const query = document.getElementById('search-bar').value.trim();
+            const suggestionsList = document.getElementById('suggestions-list');
+            const clearButton = document.getElementById('clear-button');
+            suggestionsList.innerHTML = '';
+
+            // Show or hide clear button based on search bar content
+            if (query.length > 0) {
+                clearButton.style.display = 'flex';
+            } else {
+                clearButton.style.display = 'none';
+                suggestionsList.style.display = 'none';
+                return;
+            }
+
+            if (data.length === 0) {
+                suggestionsList.style.display = 'block';
+                suggestionsList.innerHTML = '<div class="suggestion-item">No data available.</div>';
+                return;
+            }
+
+            const queryTokens = tokenizeQuery(query);
+
+            // Calculate relevance scores for all items
+            const scoredItems = data.map(item => ({
+                ...item,
+                score: calculateRelevance(item, queryTokens)
+            })).filter(item => item.score > 10); // Minimum threshold for relevance
+
+            // Sort by relevance score (descending)
+            scoredItems.sort((a, b) => b.score - a.score);
+
+            // Take top 10 suggestions
+            const topSuggestions = scoredItems.slice(0, 10);
+
+            if (topSuggestions.length > 0) {
+                suggestionsList.style.display = 'block';
+                
+                topSuggestions.forEach(item => {
+                    const div = document.createElement('div');
+                    div.classList.add('suggestion-item');
+                    if (item.score > 150) div.classList.add('highlight');
+
+                    const button = document.createElement('button');
+                    button.classList.add('suggestion-button');
+                    button.textContent = item.title + ' - ' + item.description.substring(0, 50) + '...';
+
+                    button.onclick = function() {
+                        window.open(item.link, '_blank');
+                        addToSearchHistory(query);
+                    };
+
+                    div.appendChild(button);
+                    suggestionsList.appendChild(div);
+                });
+            } else {
+                suggestionsList.style.display = 'block';
+                const div = document.createElement('div');
+                div.classList.add('suggestion-item');
+                div.textContent = 'No results found. Try broader terms or check spelling.';
+                suggestionsList.appendChild(div);
+            }
+        }
+
+        // Clear search bar function
+        function clearSearch() {
+            const searchBar = document.getElementById('search-bar');
+            const clearButton = document.getElementById('clear-button');
+            const suggestionsList = document.getElementById('suggestions-list');
+            searchBar.value = '';
+            clearButton.style.display = 'none';
+            suggestionsList.style.display = 'none';
+            searchBar.focus();
+        }
+
+        // Debounce function to limit frequent calls
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        // Debounced filter suggestions
+        const debouncedFilterSuggestions = debounce(filterSuggestions, 200);
+        document.getElementById('search-bar').oninput = debouncedFilterSuggestions;
+
+        // Keyboard navigation
+        document.getElementById('search-bar').addEventListener('keydown', function(e) {
+            const suggestions = document.querySelectorAll('.suggestion-button');
+            let currentIndex = -1;
+            
+            suggestions.forEach((sug, index) => {
+                if (sug.classList.contains('focused')) currentIndex = index;
+            });
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (currentIndex < suggestions.length - 1) {
+                    if (currentIndex >= 0) suggestions[currentIndex].classList.remove('focused');
+                    currentIndex++;
+                    suggestions[currentIndex].classList.add('focused');
+                    suggestions[currentIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentIndex > 0) {
+                    suggestions[currentIndex].classList.remove('focused');
+                    currentIndex--;
+                    suggestions[currentIndex].classList.add('focused');
+                    suggestions[currentIndex].scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'Enter' && currentIndex >= 0) {
+                e.preventDefault();
+                suggestions[currentIndex].click();
+            }
+        });
+
+        // Click outside to hide suggestions
+        document.addEventListener('click', function(event) {
+            const suggestionsList = document.getElementById('suggestions-list');
+            const searchBar = document.getElementById('search-bar');
+            const clearButton = document.getElementById('clear-button');
+
+            if (!searchBar.contains(event.target) && !suggestionsList.contains(event.target) && !clearButton.contains(event.target)) {
+                suggestionsList.style.display = 'none';
+            }
+        });
+
+        // Card section logic
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function populateCards() {
+            const cardContainer = document.getElementById('card-container');
+            cardContainer.innerHTML = '';
+            const shuffledData = shuffleArray([...data]).slice(0, 10); // Randomly select 10 items
+
+            shuffledData.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                // Make entire card clickable
+                card.onclick = function() {
+                    window.open(item.link, '_blank');
+                };
+                // Truncate description to 80 characters and add ellipsis
+                const maxDescLength = 80;
+                const truncatedDesc = item.description.length > maxDescLength 
+                    ? item.description.substring(0, maxDescLength) + '...' 
+                    : item.description;
+                card.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <p>${truncatedDesc}</p>
+                    <a href="${item.link}" target="_blank">Learn More</a>
+                `;
+                cardContainer.appendChild(card);
+            });
+        }
+
+        // Auto-scroll cards every 5 seconds
+        function autoScrollCards() {
+            const cardContainer = document.getElementById('card-container');
+            cardContainer.scrollBy({ left: 270, behavior: 'smooth' });
+            // Reset to start if at the end
+            if (cardContainer.scrollLeft + cardContainer.clientWidth >= cardContainer.scrollWidth) {
+                cardContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                setTimeout(populateCards, 1000); // Refresh cards after reset
+            }
+        }
+
+        // Populate cards on load
+        populateCards();
+        setInterval(autoScrollCards, 5000); // Auto-scroll every 5 seconds
+        setInterval(populateCards, 30000); // Refresh cards every 30 seconds
+
+        function Expsarvwigyan() {
+            window.open("https://sarvwigyan.github.io/", "_blank");
+        }
+    </script>
 </body>
 </html>
