@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virat Kohli - A Sarvwigyan Initiative</title>
+    
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Virat_Kohli_icon.svg/32px-Virat_Kohli_icon.svg.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalHpgZ/vC8FmZ3d8pT9p+nKkP9rQj/j1S6h+8o/W/Jc6zD5P7g2gD0hP1p+GzQ12k2x0x/G7t3l0p/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .hero-background {
+            background-image: url('https://images.unsplash.com/photo-1593341646782-e0b6b66e79c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .section-heading {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 4rem;
+            display: inline-block;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 120px;
+            height: 8px;
+            background-color: #ef4444;
+            border-radius: 9999px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+        .gallery-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .gallery-image-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-image-wrapper img {
+            transition: transform 0.4s ease-in-out;
+        }
+        .gallery-image-wrapper:hover img {
+            transform: scale(1.15);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .gallery-image-wrapper:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-overlay p {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        @media (max-width: 640px) {
+            .text-5xl { font-size: 2.5rem; }
+            .text-4xl { font-size: 2rem; }
+            .text-3xl { font-size: 1.75rem; }
+            .text-2xl { font-size: 1.5rem; }
+            .text-xl { font-size: 1.25rem; }
+            .text-lg { font-size: 1.125rem; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-red-500 mb-2 md:mb-0 tracking-wider hover:text-red-400 transition-colors duration-300" aria-label="Sarvwigyan Home">SARVWIGYAN PRESENTS: KING KOHLI</a>
+            <ul class="flex flex-wrap justify-center space-x-6 md:space-x-10 text-lg">
+                <li><a href="#home" class="hover:text-red-500 transition duration-300 font-medium py-1">Home</a></li>
+                <li><a href="#early-life" class="hover:text-red-500 transition duration-300 font-medium py-1">Early Life</a></li>
+                <li><a href="#career-highlights" class="hover:text-red-500 transition duration-300 font-medium py-1">Career Highlights</a></li>
+                <li><a href="#records-awards" class="hover:text-red-500 transition duration-300 font-medium py-1">Records & Awards</a></li>
+                <li><a href="#gallery" class="hover:text-red-500 transition duration-300 font-medium py-1">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-background h-screen flex items-center justify-center text-center text-white p-4">
+        <div class="hero-content bg-black bg-opacity-70 rounded-2xl p-10 md:p-16 max-w-5xl mx-auto shadow-2xl transform transition-all duration-700 hover:scale-105 hover:bg-opacity-80">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg animate-fade-in-up">
+                Virat Kohli: The Modern Maestro
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-10 drop-shadow-md animate-fade-in-up delay-200">
+                A journey through the life and unparalleled achievements of one of cricket's greatest.
+            </p>
+            <a href="#career-highlights" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-75" aria-label="Explore Virat Kohli's Legacy">
+                Explore His Legacy <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="early-life" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading mx-auto">Early Life</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-16">
+                <div class="md:w-1/2 lg:w-2/5">
+                    <img src="https://images.unsplash.com/photo-1603575281227-8d9b5633c46b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Young Virat Kohli" class="rounded-2xl shadow-2xl transform transition-all duration-700 hover:scale-105">
+                </div>
+                <div class="md:w-1/2 lg:w-3/5 text-lg leading-relaxed text-gray-700">
+                    <p class="mb-6">
+                        Born on <span class="font-semibold text-gray-900">November 5, 1988, in Delhi, India</span>, Virat Kohli's journey into cricket began early. From the vibrant streets of Uttam Nagar, his passion for the game was clear even as a three-year-old, when he would swing a bat and challenge his father to bowl.
+                    </p>
+                    <p class="mb-6">
+                        His father, <span class="font-semibold text-gray-900">Prem Kohli</span>, a criminal lawyer, saw his son's talent and enrolled him in the West Delhi Cricket Academy in 1998. Under coach <span class="font-semibold text-gray-900">Rajkumar Sharma</span>, Virat honed his skills with relentless dedication, laying the foundation for his future success.
+                    </p>
+                    <p class="mb-6">
+                        A defining moment came on <span class="font-semibold text-gray-900">December 18, 2006</span>, when his father passed away from a stroke. Despite this loss, an 18-year-old Virat played a Ranji Trophy match for Delhi the next day, scoring 90 runs, showcasing his resilience and commitment.
+                    </p>
+                    <p>
+                        Progressing through age-group cricket, he captained the Delhi U-17 team and later transferred to Saviour Convent School in ninth grade to focus on cricket, a decision that set the stage for his rise to global stardom.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="career-highlights" class="py-20 md:py-32 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading mx-auto">Career Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4 flex items-center"><i class="fas fa-trophy mr-3 text-red-500 text-3xl"></i>U19 World Cup Victory (2008)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Virat led India to the U19 World Cup title in Malaysia, scoring 235 runs in 6 matches. His leadership and batting prowess marked him as a future star.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4 flex items-center"><i class="fas fa-chart-line mr-3 text-red-500 text-3xl"></i>ODI Debut & Rise (2008-2011)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Debuting on <span class="font-semibold">August 18, 2008, against Sri Lanka</span>, Virat quickly made his mark with a century in 2009. He played a key role in the <span class="font-semibold">2011 ODI World Cup victory</span>, scoring a century against Bangladesh.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4 flex items-center"><i class="fas fa-shield-alt mr-3 text-red-500 text-3xl"></i>Test Debut & Captaincy (2011-2022)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Kohli debuted in Tests on <span class="font-semibold">June 20, 2011, against West Indies</span>. As India’s most successful Test captain, he led to 40 wins in 68 matches, securing historic overseas victories.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4 flex items-center"><i class="fas fa-medal mr-3 text-red-500 text-3xl"></i>T20 World Cup Champion (2024)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A pivotal member of the <span class="font-semibold">2024 T20 World Cup-winning team</span>, Virat earned Player of the Match in the final with a match-defining 76 off 59 balls.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4 flex items-center"><i class="fas fa-running mr-3 text-red-500 text-3xl"></i>The Chase Master</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Known as <span class="font-semibold">"The Chase Master"</span>, Virat excels in run-chases, combining calculated aggression with flawless innings-building in limited-overs cricket.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-red-600 mb-4 flex items-center"><i class="fas fa-check-circle mr-3 text-red-500 text-3xl"></i>Unmatched Consistency</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Virat’s consistency across formats is unmatched, with high averages and regular centuries. He is the only batter to achieve 900 rating points in all three formats.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="records-awards" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading mx-auto">Records & Awards</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-8 flex items-center"><i class="fas fa-list-ol mr-4 text-gray-600 text-3xl"></i>Key Batting Records</h3>
+                    <ul class="list-none space-y-6 text-lg text-gray-700">
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Most ODI Centuries:</span> Surpassed Sachin Tendulkar with <span class="font-semibold text-red-600">51+ centuries</span> in ODIs.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Most Runs in T20Is:</span> Leads with over <span class="font-semibold text-red-600">4,188 runs</span> in Men’s T20Is.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Fastest to ODI Milestones:</span> Reached 8,000 (175 innings), 9,000 (194 innings), 10,000 (205 innings), 11,000 (222 innings), 12,000 (242 innings), and 13,000 (267 innings) ODI runs.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Most Successful Indian Test Captain:</span> Secured <span class="font-semibold text-red-600">40 Test victories</span> in 68 matches.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">First to Win All Four ICC Titles:</span> Won U19 World Cup (2008), ODI World Cup (2011), Champions Trophy (2013), and T20 World Cup (2024).
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Most Player of the Series Awards:</span> Holds <span class="font-semibold text-red-600">21 awards</span> (11 ODI, 7 T20, 3 Test).
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Most Runs in a Single ODI World Cup:</span> Scored <span class="font-semibold text-red-600">765 runs</span> in 2023.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Most ODI Centuries while Chasing:</span> Notched <span class="font-semibold text-red-600">27 centuries</span> in successful chases.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Highest IPL Run-scorer:</span> Leads with over <span class="font-semibold text-red-600">7,263 runs</span>.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-star text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">300 ODIs, 100 Tests, 100 T20Is:</span> Only player to achieve this milestone across formats.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-8 flex items-center"><i class="fas fa-award mr-4 text-gray-600 text-3xl"></i>Prestigious Awards</h3>
+                    <ul class="list-none space-y-6 text-lg text-gray-700">
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Arjuna Award:</span> Received in <span class="font-semibold text-red-600">2013</span> for outstanding sports achievements.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Padma Shri:</span> Honored in <span class="font-semibold text-red-600">2017</span>, India’s fourth-highest civilian award.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Major Dhyan Chand Khel Ratna:</span> India’s highest sporting honor, awarded in <span class="font-semibold text-red-600">2018</span>.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">ICC Awards Sweep (2018):</span> First to win ICC ODI Player, Test Player, and Sir Garfield Sobers Trophy in one year.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Sir Garfield Sobers Trophy:</span> Won in <span class="font-semibold text-red-600">2017, 2018, 2020</span>, and named <span class="font-semibold text-red-600">ICC Cricketer of the Decade (2011-2020)</span>.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">ICC ODI Player of the Year:</span> Awarded in <span class="font-semibold text-red-600">2012, 2017, 2018, 2023</span>.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">ICC Test Player of the Year:</span> Honored in <span class="font-semibold text-red-600">2018</span>.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">ICC Spirit of Cricket Award:</span> Received in <span class="font-semibold text-red-600">2019</span>.
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start border border-gray-100">
+                            <i class="fas fa-trophy text-red-500 mr-4 mt-1 text-2xl"></i>
+                            <div>
+                                <span class="font-bold text-gray-900">Wisden Leading Cricketer:</span> Recognized in <span class="font-semibold text-red-600">2017, 2018, 2019</span>.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 md:py-32 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-heading mx-auto">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612872087720-2c8b1f36d3d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Virat Kohli batting" class="w-full h-auto object-cover aspect-video">
+                    <div class="gallery-overlay">
+                        <p>Master of the Bat</p>
+                    </div>
+                </div>
+                <div class="gallery-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1622835244662-8c0b4b6b6b6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Virat Kohli with trophy" class="w-full h-auto object-cover aspect-video">
+                    <div class="gallery-overlay">
+                        <p>Champion's Moment</p>
+                    </div>
+                </div>
+                <div class="gallery-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1593341646782-e0b6b66e79c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Virat Kohli as captain" class="w-full h-auto object-cover aspect-video">
+                    <div class="gallery-overlay">
+                        <p>Leading from the Front</p>
+                    </div>
+                </div>
+                <div class="gallery-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Virat Kohli training" class="w-full h-auto object-cover aspect-video">
+                    <div class="gallery-overlay">
+                        <p>Dedication to Fitness</p>
+                    </div>
+                </div>
+                <div class="gallery-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1570299436935-4c6b7a8c1922?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Virat Kohli with fans" class="w-full h-auto object-cover aspect-video">
+                    <div class="gallery-overlay">
+                        <p>Connecting with Fans</p>
+                    </div>
+                </div>
+                <div class="gallery-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1612872087720-2c8b1f36d3d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" loading="lazy" alt="Virat Kohli iconic pose" class="w-full h-auto object-cover aspect-video">
+                    <div class="gallery-overlay">
+                        <p>The Signature Style</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300 text-lg mb-4">© 2025 Sarvwigyan. All rights reserved. <br> A Sarvwigyan Initiative.</p>
+            <div class="flex justify-center space-x-7 mt-6 text-2xl">
+                <a href="https://www.facebook.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan Website"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 hover:bg-red-700 text-white p-5 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-75 z-40" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.classList.add('animate-fade-in-up');
+        });
+    </script>
+</body>
+</html>
