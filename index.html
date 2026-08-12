@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Essential Meta -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Sarvpedia – Explore Universal Knowledge</title>
+<meta name="description" content="Sarvpedia by Sarvwigyan is a free knowledge platform that explores science, technology, philosophy, education, and innovation in both Hindi and English.">
+<meta name="keywords" content="Sarvpedia, Sarvwigyan, Sarvstore, education, science, technology, books, innovation, free knowledge, open resources, Indian science, Hindi content">
+<meta name="author" content="Sarvwigyan">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="theme-color" content="#0a192f">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://sarvpedia.netlify.app/">
+
+<!-- Favicon & Manifest -->
+<link rel="icon" type="image/png" href="Resources/Sarvpedia.png" sizes="32x32">
+<link rel="manifest" href="Resources/manifest.json">
+
+<!-- Fonts (if used) -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sarvpedia – Universal Knowledge Platform by Sarvwigyan">
+<meta property="og:description" content="Explore a vast range of knowledge on science, technology, education, and culture from Sarvwigyan through Sarvpedia.">
+<meta property="og:url" content="https://sarvpedia.netlify.app/">
+<meta property="og:image" content="https://sarvwigyan.github.io/resources/Sarvpedia.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sarvpedia – A Free Knowledge Movement">
+<meta name="twitter:description" content="Sarvpedia by Sarvwigyan offers free access to knowledge in science, tech, and education.">
+<meta name="twitter:image" content="https://sarvwigyan.github.io/resources/Sarvpedia.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Resources/Sarvpedia.png" alt="Sarvpedia Logo" class="logo-img">
+            <h1>Sarvpedia</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-bar" oninput="debouncedFilterSuggestions()" placeholder="Search...">
+            <button id="clear-button" onclick="clearSearch()">×</button>
+            <div id="suggestions-list"></div>
+        </div>
+        <div class="section">
+            <h2>Empowering Humanity Through Knowledge</h2>
+            <p>
+                Welcome to <i><strong>Sarvpedia!</strong></i> Your gateway to a universe of wisdom, inspired by a mission to uplift humanity. Our AI-powered search connects you to insights on science, elements, culture, and solutions for global challenges—sustainability, health, and unity. Explore topics like renewable energy, medical breakthroughs, or cultural heritage, and join a global quest for progress. Type any term to unlock curated, relevant results instantly!
+            </p>
+        </div>
+        <button class="explore-button" onclick="Expsarvwigyan()">Explore Sarvwigyan</button>
+        <div class="card-section">
+            <h2>Discover More</h2>
+            <div class="carousel-wrapper">
+                <button class="card-nav-btn" onclick="scrollCards('left')" aria-label="Previous cards">&#10094;</button>
+                <div class="card-container" id="card-container">
+                    <!-- Cards will be dynamically inserted here -->
+                </div>
+                <button class="card-nav-btn" onclick="scrollCards('right')" aria-label="Next cards">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © Sarvwigyan - Sarvpedia. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Load data files -->
+    <script src="elements.js"></script>
+    <script src="cricket.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
