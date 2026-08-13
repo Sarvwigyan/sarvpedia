@@ -237,7 +237,7 @@ function populateCards() {
         card.innerHTML = `
             <h3>${item.title}</h3>
             <p>${truncatedDesc}</p>
-            <a href="${item.link}" target="_blank" onclick="event.stopPropagation();">Learn More &rarr;</a>
+            <a href="${item.link}" target="_blank" onclick="event.stopPropagation();">विस्तृत विवरण देखें &rarr;</a>
         `;
         cardContainer.appendChild(card);
     });
