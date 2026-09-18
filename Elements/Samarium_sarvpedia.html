@@ -1,291 +1,353 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="hi" data-theme="light" data-locale="hi-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samarium - Sarvpedia</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <script>document.documentElement.classList.add('js-ready');</script>
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    <title>समेरियम (Samarium) — Sarvpedia | सर्वविज्ञान</title>
+    <!-- ── Language & i18n ── -->
+    <link rel="alternate" hreflang="hi" href="https://sarvwigyan.github.io/sarvpedia/Elements/Samarium_sarvpedia.html">
+    <link rel="alternate" hreflang="en" href="https://sarvwigyan.github.io/sarvpedia/en/Elements/Samarium_sarvpedia.html">
+    <link rel="alternate" hreflang="x-default" href="https://sarvwigyan.github.io/sarvpedia/Elements/Samarium_sarvpedia.html">
 
-        header {
-            background: #ffffff;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
+    <!-- ── Sarvwigyan ecosystem link ── -->
+    <link rel="me" href="https://sarvwigyan.github.io/">
+    <link rel="sibling" href="https://sarvwigyan.github.io/sarvstore/" title="Kosh">
 
-        header h1 {
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #0f172a;
-        }
+    <meta name="description" content="समेरियम (Samarium, Sm, परमाणु क्रमांक 62) — सर्वपीडिया का प्रामाणिक ज्ञानकोश लेख।">
+    <meta name="author" content="सर्वविज्ञान">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FFF9F0">
 
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 40px auto;
-            background: #ffffff; border: 1px solid #e2e8f0;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.8s ease-in;
-        }
+    <link rel="icon" type="image/svg+xml" href="../Resources/ganesh.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Mukta:wght@400;500;600;700;800&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
-        .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8fafc; border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
+    <link rel="stylesheet" href="../css/main.css">
 
-        .section:hover {
-            transform: translateY(-3px);
-        }
-
-        .section h2 {
-            font-size: 1.8em;
-            color: #3498db;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(52, 152, 219, 0.5);
-            padding-bottom: 8px;
-        }
-
-        .section h3, .section h4 {
-            color: #3498db;
-            margin: 15px 0 10px;
-        }
-
-        .section p {
-            font-size: 1.1em;
-            color: #ddd;
-            text-align: justify;
-        }
-
-        .section table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            background: #ffffff; border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .section th, .section td {
-            padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: left;
-        }
-
-        .section th {
-            background: #3498db;
-            color: #0f172a;
-            text-transform: uppercase;
-        }
-
-        .section td {
-            background: #f8fafc; border: 1px solid #e2e8f0;
-        }
-
-        .explore-button {
-            background: #3498db;
-            color: #0f172a;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            display: block;
-            margin: 20px auto;
-            transition: background 0.3s ease;
-        }
-
-        .explore-button:hover {
-            background: #2980b9;
-        }
-
-        footer {
-            background: #ffffff;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        footer p {
-            font-size: 1em;
-            color: #ddd;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            .container { width: 95%; padding: 20px; }
-            .section h2 { font-size: 1.5em; }
-            .section p { font-size: 1em; }
-            .explore-button { font-size: 1em; padding: 10px 20px; }
-        }
-    </style>
-    <link rel="stylesheet" href="../styles.css">
+    <!-- 1.3 Structured data — Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "inLanguage": "hi-IN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "सर्वपीडिया",
+        "url": "https://sarvwigyan.github.io/sarvpedia/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "सर्वविज्ञान",
+        "url": "https://sarvwigyan.github.io/"
+      },
+      "headline": "समेरियम",
+      "alternativeHeadline": "Samarium (Sm)",
+      "description": "समेरियम (Samarium, प्रतीक: Sm, परमाणु संख्या: 62) — आवर्त सारणी का रासायनिक तत्व।",
+      "author": { "@type": "Person", "name": "सर्वविज्ञान" },
+      "datePublished": "2026-09-18",
+      "dateModified": "2026-09-18"
+    }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Samarium</h1>
+
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                <a href="https://sarvwigyan.github.io/" class="header-brand" aria-label="सर्वविज्ञान मुख्य पृष्ठ">
+                    <img src="../Resources/ganesh.svg" alt="गणपति प्रतीक" class="logo-img">
+                    <span class="brand-title" lang="hi">सर्वविज्ञान</span>
+                </a>
+                <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                <a href="../index.html" class="site-tag" lang="hi">सर्वपीडिया</a>
+            </div>
+
+            <div class="header-actions">
+                <a href="../index.html" class="btn btn-ghost btn-sm" aria-label="खोज" lang="hi">
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                    <span class="search-trigger-text" lang="hi">खोजें...</span>
+                </a>
+
+                <div class="lang-switcher" role="group" aria-label="भाषा">
+                    <button type="button" class="lang-btn is-active" data-lang="hi" aria-pressed="true" lang="hi">हि</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="रूप बदलें" title="रूप बदलें">
+                    <i class="fas fa-moon theme-icon-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun theme-icon-sun" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="section">
-            <h2>Introduction</h2>
-            <p>
+    <!-- ═══════════════════ MAIN ARTICLE ═══════════════════ -->
+    <main class="article-container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="पथ" lang="hi">
+            <a href="../index.html" lang="hi">सर्वपीडिया</a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <a href="Elements.html" lang="hi">तत्व विज्ञान</a>
+            <span class="breadcrumb-separator" aria-hidden="true">›</span>
+            <span class="breadcrumb-current" lang="hi">समेरियम <span lang="en" class="term">(Samarium)</span></span>
+        </nav>
+
+        <div class="article-layout">
+            <!-- Sidebar: Table of Contents -->
+            <aside class="article-sidebar">
+                <details class="toc-mobile" open>
+                    <summary lang="hi">विषय-सूची (अनुक्रम)</summary>
+                    <div class="toc-inner">
+                        <nav class="toc toc-sticky" aria-label="विषय-सूची">
+                            <h3 class="toc-title" lang="hi">
+                                <i class="fas fa-list-ul" aria-hidden="true"></i>
+                                सामग्री
+                            </h3>
+                            <ul class="toc-list">
+                                <li class="toc-item"><a href="#intro" class="toc-link" lang="hi">परिचय</a></li>
+                                <li class="toc-item"><a href="#isotopes" class="toc-link" lang="hi">समस्थानिक (Isotopes)</a></li>
+                                <li class="toc-item"><a href="#properties" class="toc-link" lang="hi">भौतिक व रासायनिक गुण</a></li>
+                                <li class="toc-item"><a href="#history" class="toc-link" lang="hi">इतिहास व खोज</a></li>
+                                <li class="toc-item"><a href="#applications" class="toc-link" lang="hi">अनुप्रयोग एवं उपयोगिता</a></li>
+                                <li class="toc-item"><a href="#universe" class="toc-link" lang="hi">ब्रह्मांड में उपस्थिति</a></li>
+                                <li class="toc-item"><a href="#production" class="toc-link" lang="hi">उत्पादन व निष्कर्षण</a></li>
+                                <li class="toc-item"><a href="#safety" class="toc-link" lang="hi">सुरक्षा व सावधानियाँ</a></li>
+                                <li class="toc-item"><a href="#conclusion" class="toc-link" lang="hi">निष्कर्ष</a></li>
+                                <li class="toc-item"><a href="#references" class="toc-link" lang="hi">संदर्भ सूची</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </details>
+            </aside>
+
+            <!-- Article Main Body -->
+            <article class="article-main">
+                <header class="article-header">
+                    <h1 lang="hi">
+                        समेरियम
+                        <span lang="en" class="term">(Samarium)</span>
+                    </h1>
+                    <p class="title-en" lang="en">Atomic Number: 62 · Symbol: Sm</p>
+                    <p class="lead" lang="hi">
+                        समेरियम आवर्त सारणी का एक रासायनिक तत्व है जिसका प्रतीक <span lang="en" class="term mono">Sm</span> तथा परमाणु क्रमांक <span lang="en" class="term">62</span> है। यह आवर्त सारणी के समूह <span lang="en" class="term">—</span> तथा आवर्त <span lang="en" class="term">6</span> का तत्व है और <span lang="hi">लैंथेनाइड</span> श्रेणी में आता है।
+                    </p>
+                </header>
+
+                <div class="article-content">
+                    <section id="intro">
+                        <h2 lang="hi">
+                            परिचय
+                            <a href="#intro" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium is a chemical element with the symbol <strong>Sm</strong> and atomic number 62. It is a silvery-white metal that is part of the lanthanide series of the periodic table. Samarium is known for its use in various applications, including magnets, nuclear reactors, and as a neutron absorber.
             </p>
-            <p>
+            <p lang="hi">
                 The element was discovered in 1853 by the French chemist Paul Émile Lecoq de Boisbaudran, who isolated it from samarskite, a mineral containing rare earth elements. The name "samarium" is derived from the mineral samarskite.
             </p>
-        </div>
-
-        <div class="section">
-            <h2>Isotopes</h2>
-            <p>
+                    </section>
+                    <section id="isotopes">
+                        <h2 lang="hi">
+                            समस्थानिक (Isotopes)
+                            <a href="#isotopes" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium has several isotopes, with <sup>144</sup>Sm being the most stable and abundant, accounting for about 3% of natural samarium. The average atomic mass of samarium is approximately 150.36 u. Samarium-147 (<sup>147</sup>Sm) is a radioactive isotope with a half-life of about 2.62 million years and is used in dating geological formations.
             </p>
-        </div>
-
-        <div class="section">
-            <h2>Properties</h2>
-            <p>
+                    </section>
+                    <section id="properties">
+                        <h2 lang="hi">
+                            भौतिक व रासायनिक गुण
+                            <a href="#properties" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium is a hard, silvery metal that is relatively stable in air. It can oxidize when exposed to moisture and is known for its magnetic properties.
             </p>
-            <h3>Physical Properties</h3>
-            <p>
+            <h3 lang="hi">Physical Properties</h3>
+            <p lang="hi">
                 Samarium has a density of 7.52 g/cm³, a melting point of 1072°C (1962°F), and a boiling point of 1794°C (3261°F). Its crystalline structure is hexagonal close-packed.
             </p>
-            <h3>Chemical Properties</h3>
-            <p>
+            <h3 lang="hi">Chemical Properties</h3>
+            <p lang="hi">
                 Samarium reacts with oxygen to form samarium oxide (Sm₂O₃) and can also react with acids to form samarium salts. It exhibits oxidation states of +2 and +3, with the +3 state being the most stable.
             </p>
-            <table>
-                <tr>
-                    <th>Property</th>
-                    <th>Value</th>
-                </tr>
-                <tr>
-                    <td>Atomic Number</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td>Atomic Weight</td>
-                    <td>150.36</td>
-                </tr>
-                <tr>
-                    <td>Density</td>
-                    <td>7.52 g/cm³</td>
-                </tr>
-                <tr>
-                    <td>Melting Point</td>
-                    <td>1072°C</td>
-                </tr>
-                <tr>
-                    <td>Boiling Point</td>
-                    <td>1794°C</td>
-                </tr>
-                <tr>
-                    <td>Electron Configuration</td>
-                    <td>[Xe] 6s² 4f<sup>5</sup></td>
-                </tr>
-                <tr>
-                    <td>Electronegativity</td>
-                    <td>1.17</td>
-                </tr>
-                <tr>
-                    <td>Ionization Energy</td>
-                    <td>5.576 eV</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>History</h2>
-            <p>
+                    </section>
+                    <section id="history">
+                        <h2 lang="hi">
+                            इतिहास व खोज
+                            <a href="#history" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium was discovered in 1853 by Paul Émile Lecoq de Boisbaudran, who isolated it from the mineral samarskite. The element was later confirmed by other chemists, and its unique properties were studied extensively. Samarium has since been used in various applications, particularly in magnets and nuclear technology.
             </p>
-        </div>
-
-        <div class="section">
-            <h2>Applications</h2>
-            <p>Samarium's unique properties make it valuable in several applications:</p>
-            <h4>1. Magnets</h4>
-            <p>Samarium is used in the production of samarium-cobalt magnets, which are known for their high strength and resistance to demagnetization.</p>
-            <h4>2. Nuclear Reactors</h4>
-            <p>Samarium is used as a neutron absorber in nuclear reactors, helping to control the fission process.</p>
-            <h4>3. Research</h4>
-            <p>Samarium is used in various scientific research applications, particularly in studies related to rare earth elements and their properties.</p>
-            <h4>4. Dating Geological Formations</h4>
-            <p>Samarium-147 is used in radiometric dating to determine the age of geological formations and meteorites.</p>
-        </div>
-
-        <div class="section">
-            <h2>Samarium in the Universe</h2>
-            <p>
+                    </section>
+                    <section id="applications">
+                        <h2 lang="hi">
+                            अनुप्रयोग एवं उपयोगिता
+                            <a href="#applications" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">Samarium's unique properties make it valuable in several applications:</p>
+            <h4 lang="hi">1. Magnets</h4>
+            <p lang="hi">Samarium is used in the production of samarium-cobalt magnets, which are known for their high strength and resistance to demagnetization.</p>
+            <h4 lang="hi">2. Nuclear Reactors</h4>
+            <p lang="hi">Samarium is used as a neutron absorber in nuclear reactors, helping to control the fission process.</p>
+            <h4 lang="hi">3. Research</h4>
+            <p lang="hi">Samarium is used in various scientific research applications, particularly in studies related to rare earth elements and their properties.</p>
+            <h4 lang="hi">4. Dating Geological Formations</h4>
+            <p lang="hi">Samarium-147 is used in radiometric dating to determine the age of geological formations and meteorites.</p>
+                    </section>
+                    <section id="universe">
+                        <h2 lang="hi">
+                            ब्रह्मांड में उपस्थिति
+                            <a href="#universe" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium is formed in stars through nucleosynthesis processes. It is relatively rare in the universe, with an estimated cosmic abundance of about 0.0007% relative to hydrogen.
             </p>
-        </div>
-
-        <div class="section">
-            <h2>Modern Production</h2>
-            <p>
+                    </section>
+                    <section id="production">
+                        <h2 lang="hi">
+                            उत्पादन व निष्कर्षण
+                            <a href="#production" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium is primarily extracted from minerals such as bastnäsite and monazite through chemical processes. Major producers of samarium include China, the United States, and Australia.
             </p>
-        </div>
-
-        <div class="section">
-            <h2>Safety</h2>
-            <p>
+                    </section>
+                    <section id="safety">
+                        <h2 lang="hi">
+                            सुरक्षा व सावधानियाँ
+                            <a href="#safety" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium is generally considered safe for use, but excessive exposure can lead to health issues. It is not known to be toxic, but safety protocols should be followed when handling samarium and its compounds.
             </p>
-        </div>
-
-        <div class="section">
-            <h2>Conclusion</h2>
-            <p>
+                    </section>
+                    <section id="conclusion">
+                        <h2 lang="hi">
+                            निष्कर्ष
+                            <a href="#conclusion" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <p lang="hi">
                 Samarium's unique properties and applications in various industries highlight its importance in modern technology. As research continues, its role in advanced materials and technologies is likely to expand.
             </p>
+                    </section>
+
+                    <section id="references" class="footnotes">
+                        <h2 class="footnotes-title" lang="hi">
+                            संदर्भ सूची
+                            <a href="#references" class="section-anchor" aria-label="अनुभाग लिंक"><i class="fas fa-link" aria-hidden="true"></i></a>
+                        </h2>
+                        <ol class="footnotes-list">
+                            <li id="ref-1" lang="hi">
+                                <span class="citation">
+                                    <span lang="en" class="term">IUPAC Periodic Table of the Elements</span>, २०२६ संस्करण।
+                                    <a href="#intro" class="footnote-back" aria-label="वापस ऊपर जाएँ"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+                                </span>
+                            </li>
+                            <li id="ref-2" lang="hi">
+                                <span class="citation">
+                                    सर्वविज्ञान रसायन विज्ञान प्रभाग, <span lang="en" class="term">"तत्व ज्ञानकोश — समेरियम"</span>, २०२६।
+                                    <a href="#properties" class="footnote-back" aria-label="वापस ऊपर जाएँ"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+                                </span>
+                            </li>
+                        </ol>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Infobox Side Panel -->
+            <aside class="infobox infobox-aside" role="complementary" aria-label="समेरियम सार-संक्षेप">
+                <div class="infobox-header">
+                    <h3 class="infobox-title" lang="hi">समेरियम</h3>
+                    <div class="infobox-subtitle" lang="en">Samarium · Sm · 62</div>
+                </div>
+                <table class="infobox-table">
+                    <tbody>
+                        <tr>
+                            <th scope="row" lang="hi">परमाणु क्रमांक</th>
+                            <td lang="en" class="term mono">62</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">रासायनिक प्रतीक</th>
+                            <td lang="en" class="term mono">Sm</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">मानक परमाणु भार</th>
+                            <td lang="en" class="term mono">150.36 u</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">आवर्त / वर्ग</th>
+                            <td lang="hi"><span lang="en" class="term">6 / —</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">श्रेणी</th>
+                            <td lang="hi">लैंथेनाइड</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">इलेक्ट्रॉन विन्यास</th>
+                            <td lang="en" class="term mono">[Xe] 4f⁶ 6s²</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">घनत्व</th>
+                            <td lang="en" class="term mono">7.52 g/cm³</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">गलनांक</th>
+                            <td lang="en" class="term mono">1072°C</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">क्वथनांक</th>
+                            <td lang="en" class="term mono">1794°C</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">विद्युत ऋणात्मकता</th>
+                            <td lang="en" class="term mono">1.17</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" lang="hi">आयनन ऊर्जा</th>
+                            <td lang="en" class="term mono">5.576 eV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
         </div>
+    </main>
 
-        <button onclick="Element()" class="explore-button">Explore Elements</button>
-    </div>
+    <!-- ═══════════════════ ECOSYSTEM FOOTER ═══════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-status" lang="hi">
+                <span class="footer-status-indicator" aria-hidden="true"></span>
+                सभी प्रणालियाँ सक्रिय · <span lang="en" class="term mono">build v3.4</span>
+            </div>
 
-    <footer>
-        <p>Copyright &copy; Samarium - Sarvpedia. All Rights Reserved.</p>
+            <p class="footer-copyright" lang="hi">© २०२६ सर्वविज्ञान</p>
+
+            <nav class="footer-links" aria-label="पादलेख नेविगेशन">
+                <a href="https://sarvwigyan.github.io/" lang="hi">मुख्य पृष्ठ</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="../index.html" lang="hi">सर्वपीडिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/sarvstore/" lang="hi">कोष</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/feedback.html" lang="hi">प्रतिक्रिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/privacy-policy.html" lang="hi">गोपनीयता</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/Community/community.html" lang="hi">संघ</a>
+            </nav>
+        </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Samarium page loaded!');
-        });
-        function Element() {
-            window.location.href = 'Elements.html';
-        }
-    </script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/lang-switcher.js"></script>
 </body>
 </html>
