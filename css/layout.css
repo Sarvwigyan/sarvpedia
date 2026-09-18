@@ -1,0 +1,22 @@
+/* ============================================================
+   सर्वविज्ञान · Layout · v1.0
+   Shared Layout Containers and Grids
+   ============================================================ */
+
+.container,
+.section-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .container,
+  .section-container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+}

@@ -1,79 +1,295 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi" data-theme="light" data-locale="hi-IN">
 <head>
-<!-- Essential Meta -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add('js-ready');</script>
 
-<!-- SEO Meta -->
-<title>सर्वज्ञानकोश – मुक्त वैश्विक ज्ञानपीठ | सर्वविज्ञान</title>
-<meta name="description" content="सर्वविज्ञान द्वारा संचालित सर्वज्ञानकोश (सर्वपीडिया): विज्ञान, प्रौद्योगिकी, तत्व विज्ञान, दर्शन एवं नवाचार का प्रामाणिक ज्ञानकोश।">
-<meta name="keywords" content="सर्वज्ञानकोश, सर्वपीडिया, सर्वविज्ञान, सर्व-भंडार, शिक्षा, विज्ञान, प्रौद्योगिकी, तत्व, नवाचार, मुक्त ज्ञान">
-<meta name="author" content="सर्वविज्ञान">
-<meta name="robots" content="index, follow">
-<meta name="language" content="Hindi">
-<meta name="theme-color" content="#0a192f">
+    <title>Sarvpedia — ज्ञान का मंदिर | सर्वविज्ञान</title>
+    <!-- ── Language & i18n ── -->
+    <link rel="alternate" hreflang="hi" href="https://sarvwigyan.github.io/sarvpedia/">
+    <link rel="alternate" hreflang="en" href="https://sarvwigyan.github.io/sarvpedia/en/">
+    <link rel="alternate" hreflang="x-default" href="https://sarvwigyan.github.io/sarvpedia/">
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://sarvpedia.netlify.app/">
+    <!-- ── Sarvwigyan ecosystem link ── -->
+    <link rel="me" href="https://sarvwigyan.github.io/">
+    <link rel="sibling" href="https://sarvwigyan.github.io/sarvstore/" title="Kosh">
 
-<!-- Favicon & Manifest -->
-<link rel="icon" type="image/png" href="Resources/Sarvpedia.png" sizes="32x32">
-<link rel="manifest" href="Resources/manifest.json">
+    <meta name="description" content="Sarvpedia — गणपति की कृपा से ज्ञान का विस्तार। विज्ञान, तत्व विज्ञान, प्रौद्योगिकी, दर्शन एवं संस्कृति का प्रामाणिक संग्रह।">
+    <meta name="keywords" content="Sarvpedia, सर्वपीडिया, सर्वविज्ञान, विज्ञान, तत्व, रसायन, गणेश, ज्ञान, शिक्षा, मुक्त ज्ञानकोश">
+    <meta name="author" content="सर्वविज्ञान">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#FBF6EC">
+    <link rel="canonical" href="https://sarvpedia.netlify.app/">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="Resources/ganesh.svg">
+    <link rel="manifest" href="Resources/manifest.json">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="सर्वज्ञानकोश – मुक्त ज्ञान अभियान | सर्वविज्ञान">
-<meta property="og:description" content="सर्वविज्ञान के माध्यम से विज्ञान, प्रौद्योगिकी, तत्व विज्ञान तथा संस्कृति के समृद्ध ज्ञान का अन्वेषण करें।">
-<meta property="og:url" content="https://sarvpedia.netlify.app/">
-<meta property="og:image" content="https://sarvwigyan.github.io/resources/Sarvpedia.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Mukta:wght@400;500;600;700;800&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sarvpedia — ज्ञान का मंदिर">
+    <meta property="og:description" content="गणपति की कृपा से विज्ञान, तत्व विज्ञान एवं संस्कृति का प्रामाणिक संग्रह।">
+    <meta property="og:url" content="https://sarvpedia.netlify.app/">
+    <meta property="og:image" content="https://sarvwigyan.github.io/sarvpedia/Resources/ganesh.svg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Sarvpedia",
+      "url": "https://sarvpedia.netlify.app/",
+      "logo": "https://sarvwigyan.github.io/sarvpedia/Resources/ganesh.svg",
+      "sameAs": ["https://sarvwigyan.github.io/"],
+      "description": "Sarvpedia — ज्ञान का मंदिर। विज्ञान, तत्व विज्ञान एवं संस्कृति का मुक्त संग्रह।"
+    }
+    </script>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <img src="Resources/Sarvpedia.png" alt="सर्वज्ञानकोश प्रतीक" class="logo-img">
-            <h1>सर्वज्ञानकोश</h1>
+
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-brand-wrap" style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                <a href="https://sarvwigyan.github.io/" class="header-brand logo" aria-label="सर्वविज्ञान मुख्य पृष्ठ">
+                    <img src="Resources/ganesh.svg" alt="गणपति प्रतीक" class="logo-img">
+                    <div class="logo-text">
+                        <span class="brand-title" lang="hi" style="font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--text);">सर्वविज्ञान</span>
+                        <span lang="hi" style="font-size: var(--text-xs); color: var(--text-muted);">ज्ञान का मंदिर</span>
+                    </div>
+                </a>
+                <span class="breadcrumb-separator" aria-hidden="true" style="color: var(--border-strong);">›</span>
+                <a href="index.html" class="site-tag" lang="hi">सर्वपीडिया</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="search-trigger" id="searchTrigger" type="button" aria-label="खोज खोलें">
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                    <span class="search-trigger-text" lang="hi">सर्वपीडिया में खोजें...</span>
+                    <kbd class="search-kbd" lang="en">⌘K</kbd>
+                </button>
+
+                <div class="lang-switcher" role="group" aria-label="भाषा">
+                    <button type="button" class="lang-btn is-active" data-lang="hi" aria-pressed="true" lang="hi">हि</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="रूप बदलें" title="रूप बदलें">
+                    <i class="fas fa-moon theme-icon-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun theme-icon-sun" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <div class="search-container">
-            <input type="text" id="search-bar" oninput="debouncedFilterSuggestions()" placeholder="विज्ञान, तत्व, शोध एवं विषय खोजें...">
-            <button id="clear-button" onclick="clearSearch()">×</button>
-            <div id="suggestions-list"></div>
-        </div>
-        <div class="section">
-            <h2>ज्ञान के माध्यम से मानवता का सशक्तिकरण</h2>
-            <p>
-                <strong>सर्वज्ञानकोश (सर्वपीडिया)</strong> में आपका स्वागत है! संपूर्ण मानवता के उत्थान के ध्येय से प्रेरित, यह मंच ज्ञान के अनंत भंडार का आपका प्रामाणिक द्वार है। हमारा बौद्धिक खोज तंत्र आपको विज्ञान, रासायनिक तत्वों, संस्कृति, पर्यावरण एवं वैश्विक चुनौतियों के समाधानों से क्षण भर में जोड़ता है। नवीकरणीय ऊर्जा, चिकित्सा विज्ञान या सांस्कृतिक धरोहर जैसे विषयों का अन्वेषण करें। कोई भी शब्द खोजकर प्रामाणिक जानकारी तुरंत प्राप्त करें!
-            </p>
-        </div>
-        <button class="explore-button" onclick="Expsarvwigyan()">सर्वविज्ञान मुख्य मंच देखें</button>
-        <div class="card-section">
-            <h2>विशिष्ट विषय संग्रह</h2>
-            <div class="carousel-wrapper">
-                <button class="card-nav-btn" onclick="scrollCards('left')" aria-label="पिछला विषय">&#10094;</button>
-                <div class="card-container" id="card-container">
-                    <!-- Cards will be dynamically inserted here -->
-                </div>
-                <button class="card-nav-btn" onclick="scrollCards('right')" aria-label="अगला विषय">&#10095;</button>
-            </div>
-        </div>
-    </div>
+    <main>
 
-    <footer>
-        <p>कॉपीराइट © २०२६ सर्वविज्ञान - सर्वज्ञानकोश। सर्वाधिकार सुरक्षित।</p>
+        <!-- ═══════════════════ HERO ═══════════════════ -->
+        <section class="hero" aria-label="मुख्य खोज क्षेत्र">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-ganesh" aria-hidden="true">
+                <img src="Resources/ganesh.svg" alt="">
+            </div>
+
+            <div class="hero-content">
+                <span class="hero-eyebrow" lang="hi">
+                    <span class="om-symbol" aria-hidden="true">ॐ</span>
+                    श्री गणेशाय नमः
+                </span>
+
+                <h1 class="hero-title" lang="hi">
+                    ज्ञान के द्वार,<br>
+                    <span class="hero-highlight">गणपति के संग</span>
+                </h1>
+
+                <p class="sanskrit-shloka shloka" lang="sa">
+                    वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>
+                    निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+                </p>
+
+                <p class="hero-subtitle" lang="hi">
+                    विज्ञान, तत्व विज्ञान, प्रौद्योगिकी एवं संस्कृति —<br>
+                    समस्त ज्ञान अब एक ही स्थान पर।
+                </p>
+
+                <!-- मुख्य खोज -->
+                <div class="search-wrap" role="search">
+                    <i class="fas fa-magnifying-glass search-icon" aria-hidden="true"></i>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        class="search-input"
+                        placeholder="सर्वपीडिया में खोजें..."
+                        aria-label="ज्ञान खोजें"
+                        autocomplete="off"
+                        spellcheck="false"
+                        lang="hi">
+                    <button class="clear-btn" id="clearBtn" type="button" aria-label="खोज साफ़ करें">
+                        <i class="fas fa-xmark" aria-hidden="true"></i>
+                    </button>
+                    <div class="suggestions" id="suggestions" role="listbox" aria-label="खोज सुझाव"></div>
+                </div>
+
+                <!-- शीघ्र खोज -->
+                <div class="chips" id="chips" aria-label="प्रचलित विषय">
+                    <button type="button" class="chip" data-query="तत्व" lang="hi">
+                        <i class="fas fa-flask" aria-hidden="true"></i> तत्व
+                    </button>
+                    <button type="button" class="chip" data-query="metal" lang="hi">
+                        <i class="fas fa-cog" aria-hidden="true"></i> धातु
+                    </button>
+                    <button type="button" class="chip" data-query="gas" lang="hi">
+                        <i class="fas fa-wind" aria-hidden="true"></i> गैस
+                    </button>
+                    <button type="button" class="chip" data-query="radioactive" lang="hi">
+                        <i class="fas fa-radiation" aria-hidden="true"></i> रेडियोधर्मी
+                    </button>
+                    <button type="button" class="chip" data-query="lanthanide" lang="hi">
+                        <i class="fas fa-gem" aria-hidden="true"></i> दुर्लभ मृदा
+                    </button>
+                    <button type="button" class="chip" data-query="cricket" lang="hi">
+                        <i class="fas fa-baseball" aria-hidden="true"></i> क्रीड़ा
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ विशिष्ट विषय ═══════════════════ -->
+        <section class="featured" aria-label="विशिष्ट विषय संग्रह">
+            <div class="section-container">
+                <div class="section-head">
+                    <span class="section-eyebrow reveal" lang="hi">
+                        <i class="fas fa-dharmachakra" aria-hidden="true"></i>
+                        आज के विशिष्ट विषय
+                    </span>
+                    <h2 class="section-title reveal" lang="hi">ज्ञान के विविध आयाम</h2>
+                    <p class="section-subtitle reveal" lang="hi">
+                        गणपति की कृपा से चुने हुए कुछ विषय — जिज्ञासा को प्रज्वलित करने के लिए।
+                    </p>
+                </div>
+
+                <div class="carousel-wrap reveal">
+                    <button class="nav-btn nav-btn-left" id="prevBtn" type="button" aria-label="पिछला विषय">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+
+                    <div class="carousel" id="carousel" role="region" aria-label="विषय कैरोसेल"></div>
+
+                    <button class="nav-btn nav-btn-right" id="nextBtn" type="button" aria-label="अगला विषय">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ ध्येय ═══════════════════ -->
+        <section class="mission" aria-label="हमारा ध्येय">
+            <div class="section-container">
+                <div class="mission-card reveal">
+                    <div class="mission-icon">
+                        <img src="Resources/ganesh.svg" alt="" aria-hidden="true">
+                    </div>
+
+                    <h2 class="mission-title" lang="hi">गणपति की कृपा से ज्ञान का विस्तार</h2>
+
+                    <p class="mission-shloka shloka" lang="sa">
+                        ॐ गं गणपतये नमः
+                    </p>
+
+                    <p class="mission-text" lang="hi">
+                        गणपति विद्या, बुद्धि और विघ्न-विनाशक हैं। सर्वपीडिया उनके आशीर्वाद से
+                        संपूर्ण मानवता तक ज्ञान पहुँचाने का प्रयास है।
+                        हमारा खोज तंत्र आपको विज्ञान, रासायनिक तत्वों, प्रौद्योगिकी,
+                        संस्कृति एवं वैश्विक चुनौतियों के समाधानों से क्षण भर में जोड़ता है —
+                        बिना किसी बाधा, बिना किसी शुल्क।
+                    </p>
+
+                    <div class="mission-stats">
+                        <div class="ms-item">
+                            <strong lang="hi">१०८</strong>
+                            <span lang="hi">तत्व एवं विषय</span>
+                        </div>
+                        <div class="ms-item">
+                            <strong lang="sa">ॐ</strong>
+                            <span lang="hi">सदैव निःशुल्क</span>
+                        </div>
+                        <div class="ms-item">
+                            <strong lang="hi">२४/७</strong>
+                            <span lang="hi">सुलभ पहुँच</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ आगे बढ़ें ═══════════════════ -->
+        <section class="cta" aria-label="मुख्य मंच">
+            <div class="cta-card reveal">
+                <div class="cta-content">
+                    <span class="section-eyebrow" lang="hi">
+                        <i class="fas fa-compass" aria-hidden="true"></i>
+                        आगे बढ़ें
+                    </span>
+                    <h2 class="cta-title" lang="hi">समस्त सर्वविज्ञान मंडल का अन्वेषण करें</h2>
+                    <p class="cta-text" lang="hi">
+                        सर्वपीडिया के साथ-साथ, सर्वविज्ञान के अन्य मंचों पर भी जाएँ —
+                        कोष, शोध-संघ तथा अन्य।
+                    </p>
+                    <div class="cta-actions">
+                        <a href="https://sarvwigyan.github.io/" class="btn btn-success" lang="hi">
+                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                            मुख्य मंच देखें
+                        </a>
+                        <a href="https://sarvwigyan.github.io/sarvstore/" class="btn btn-brand" lang="hi">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            कोष देखें
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-accent" aria-hidden="true"></div>
+        <div class="footer-inner">
+            <p class="footer-shloka shloka" lang="sa">॥ श्री गणेशाय नमः ॥</p>
+
+            <div class="footer-status" lang="hi">
+                <span class="status-pill">
+                    <span class="status-dot"></span>
+                    सभी प्रणालियाँ सक्रिय · <span lang="en" class="term mono">build v3.4</span>
+                </span>
+            </div>
+
+            <p class="footer-copy" lang="hi">© २०२६ सर्वविज्ञान</p>
+
+            <nav class="footer-nav" aria-label="पादलेख नेविगेशन">
+                <a href="https://sarvwigyan.github.io/" lang="hi">मुख्य पृष्ठ</a>
+                <a href="index.html" lang="hi">सर्वपीडिया</a>
+                <a href="https://sarvwigyan.github.io/sarvstore/" lang="hi">कोष</a>
+                <a href="https://sarvwigyan.github.io/feedback.html" lang="hi">प्रतिक्रिया</a>
+                <a href="https://sarvwigyan.github.io/privacy-policy.html" lang="hi">गोपनीयता</a>
+                <a href="https://sarvwigyan.github.io/Community/community.html" lang="hi">संघ</a>
+            </nav>
+        </div>
     </footer>
 
-    <!-- Load data files -->
+    <!-- ═══════════════════ DATA & SCRIPTS ═══════════════════ -->
     <script src="elements.js"></script>
     <script src="cricket.js"></script>
-
+    <script src="js/i18n.js"></script>
+    <script src="js/lang-switcher.js"></script>
+    <script src="js/search.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

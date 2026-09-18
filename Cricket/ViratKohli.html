@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="hi" data-theme="light" data-locale="hi-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virat Kohli - A Sarvwigyan Initiative</title>
-    
-    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Virat_Kohli_icon.svg/32px-Virat_Kohli_icon.svg.png">
+    <title>विराट कोहली (Virat Kohli) — Sarvpedia | सर्वविज्ञान</title>
+    <!-- ── Language & i18n ── -->
+    <link rel="alternate" hreflang="hi" href="https://sarvwigyan.github.io/sarvpedia/Cricket/ViratKohli.html">
+    <link rel="alternate" hreflang="en" href="https://sarvwigyan.github.io/sarvpedia/en/Cricket/ViratKohli.html">
+    <link rel="alternate" hreflang="x-default" href="https://sarvwigyan.github.io/sarvpedia/Cricket/ViratKohli.html">
 
+    <!-- ── Sarvwigyan ecosystem link ── -->
+    <link rel="me" href="https://sarvwigyan.github.io/">
+    <link rel="sibling" href="https://sarvwigyan.github.io/sarvstore/" title="Kosh">
+
+    <link rel="icon" type="image/svg+xml" href="../Resources/ganesh.svg">
+    <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -117,18 +124,49 @@
 </head>
 <body class="antialiased">
 
-    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold text-red-500 mb-2 md:mb-0 tracking-wider hover:text-red-400 transition-colors duration-300" aria-label="Sarvwigyan Home">SARVWIGYAN PRESENTS: KING KOHLI</a>
-            <ul class="flex flex-wrap justify-center space-x-6 md:space-x-10 text-lg">
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                <a href="https://sarvwigyan.github.io/" class="header-brand" aria-label="सर्वविज्ञान मुख्य पृष्ठ">
+                    <img src="../Resources/ganesh.svg" alt="गणपति प्रतीक" class="logo-img">
+                    <span class="brand-title" lang="hi">सर्वविज्ञान</span>
+                </a>
+                <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                <a href="../index.html" class="site-tag" lang="hi">सर्वपीडिया</a>
+            </div>
+
+            <div class="header-actions">
+                <a href="../index.html" class="btn btn-ghost btn-sm" aria-label="खोज" lang="hi">
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                    <span class="search-trigger-text" lang="hi">खोजें...</span>
+                </a>
+
+                <div class="lang-switcher" role="group" aria-label="भाषा">
+                    <button type="button" class="lang-btn is-active" data-lang="hi" aria-pressed="true" lang="hi">हि</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="रूप बदलें" title="रूप बदलें">
+                    <i class="fas fa-moon theme-icon-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun theme-icon-sun" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-gray-900 text-white shadow-lg sticky top-[72px] z-40">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-red-500 mb-2 md:mb-0 tracking-wider hover:text-red-400 transition-colors duration-300" aria-label="Virat Kohli">विराट कोहली · VIRAT KOHLI</a>
+            <ul class="flex flex-wrap justify-center space-x-6 md:space-x-10 text-base">
                 <li><a href="#home" class="hover:text-red-500 transition duration-300 font-medium py-1">Home</a></li>
                 <li><a href="#early-life" class="hover:text-red-500 transition duration-300 font-medium py-1">Early Life</a></li>
                 <li><a href="#career-highlights" class="hover:text-red-500 transition duration-300 font-medium py-1">Career Highlights</a></li>
                 <li><a href="#records-awards" class="hover:text-red-500 transition duration-300 font-medium py-1">Records & Awards</a></li>
                 <li><a href="#gallery" class="hover:text-red-500 transition duration-300 font-medium py-1">Gallery</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <section id="home" class="hero-background h-screen flex items-center justify-center text-center text-white p-4">
         <div class="hero-content bg-black bg-opacity-70 rounded-2xl p-10 md:p-16 max-w-5xl mx-auto shadow-2xl transform transition-all duration-700 hover:scale-105 hover:bg-opacity-80">
@@ -389,19 +427,34 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-300 text-lg mb-4">© 2025 Sarvwigyan. All rights reserved. <br> A Sarvwigyan Initiative.</p>
-            <div class="flex justify-center space-x-7 mt-6 text-2xl">
-                <a href="https://www.facebook.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/company/Sarvwigyan" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan on LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300" aria-label="Sarvwigyan Website"><i class="fas fa-globe"></i></a>
+    <!-- ═══════════════════ ECOSYSTEM FOOTER ═══════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-status" lang="hi">
+                <span class="footer-status-indicator" aria-hidden="true"></span>
+                सभी प्रणालियाँ सक्रिय · <span lang="en" class="term mono">build v3.4</span>
             </div>
+
+            <p class="footer-copyright" lang="hi">© २०२६ सर्वविज्ञान</p>
+
+            <nav class="footer-links" aria-label="पादलेख नेविगेशन">
+                <a href="https://sarvwigyan.github.io/" lang="hi">मुख्य पृष्ठ</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="../index.html" lang="hi">सर्वपीडिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/sarvstore/" lang="hi">कोष</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/feedback.html" lang="hi">प्रतिक्रिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/privacy-policy.html" lang="hi">गोपनीयता</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/Community/community.html" lang="hi">संघ</a>
+            </nav>
         </div>
     </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/lang-switcher.js"></script>
 
     <button onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-red-600 hover:bg-red-700 text-white p-5 rounded-full shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-75 z-40" aria-label="Scroll to top">
         <i class="fas fa-arrow-up text-xl"></i>

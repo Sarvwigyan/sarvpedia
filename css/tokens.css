@@ -1,0 +1,138 @@
+/* ============================================================
+   सर्वविज्ञान · Design Tokens · v1.0
+   Shared across: Sarvpedia · Kosh · Sarvwigyan
+   DO NOT fork. DO NOT add project-specific values here.
+   ============================================================ */
+
+:root {
+  /* ── Brand palette (Marigold / हल्दी) ── */
+  --saffron-50:   #FFF9F0;
+  --saffron-100:  #FEF3E2;
+  --saffron-200:  #FDE5C0;
+  --saffron-300:  #FCD9A0;
+  --saffron-400:  #F59E0B;
+  --saffron-500:  #D97706;
+  --saffron-600:  #B45309;
+  --saffron-700:  #92400E;
+  --saffron-900:  #451A03;
+
+  /* ── Warm ink (text & borders) ── */
+  --ink-900: #1C1917;
+  --ink-800: #292524;
+  --ink-700: #44403C;
+  --ink-600: #57534E;
+  --ink-500: #78716C;
+  --ink-400: #A8A29E;
+  --ink-300: #D6D3D1;
+  --ink-200: #E7E5E4;
+  --ink-100: #F5F5F4;
+  --ink-50:  #FAFAF9;
+
+  /* ── Semantic (light theme default) ── */
+  --bg:            var(--saffron-50);
+  --surface:       #FFFFFF;
+  --surface-2:     var(--ink-50);
+  --surface-3:     var(--ink-100);
+  --text:          var(--ink-900);
+  --text-muted:    var(--ink-500);
+  --text-subtle:   var(--ink-400);
+  --border:        var(--ink-200);
+  --border-strong: var(--ink-300);
+  --accent:        var(--saffron-600);
+  --accent-hover:  var(--saffron-700);
+  --accent-soft:   var(--saffron-100);
+  --success:       #16A34A;
+  --warning:       #EA580C;
+  --error:         #DC2626;
+  --info:          #2563EB;
+
+  /* ── Spacing (8px base) ── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* ── Type scale ── */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  2rem;
+  --text-4xl:  2.5rem;
+  --text-5xl:  3.5rem;
+
+  /* ── Line heights (Devanagari-aware) ── */
+  --leading-tight:   1.25;
+  --leading-snug:    1.4;
+  --leading-normal:  1.5;
+  --leading-hindi:   1.8;   /* Devanagari needs breathing room */
+  --leading-relaxed: 1.9;
+
+  /* ── Fonts ── */
+  --font-hindi:   'Mukta', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --font-display: 'Fraunces', 'Mukta', Georgia, serif;
+  --font-ui:      'Inter', 'Mukta', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Radii ── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-full: 9999px;
+
+  /* ── Shadows (warm) ── */
+  --shadow-xs: 0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.06), 0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 4px 12px rgba(28, 25, 23, 0.08);
+  --shadow-lg: 0 12px 32px rgba(28, 25, 23, 0.12);
+  --shadow-xl: 0 24px 48px rgba(28, 25, 23, 0.16);
+
+  /* ── Motion ── */
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:  150ms;
+  --dur-base:  250ms;
+  --dur-slow:  400ms;
+
+  /* ── Layout ── */
+  --container-max: 1280px;
+  --content-max:   68ch;
+  --header-h:      72px;
+}
+
+/* ── Dark theme ── */
+[data-theme="dark"] {
+  --bg:            #0C0A09;
+  --surface:       #1C1917;
+  --surface-2:     #292524;
+  --surface-3:     #44403C;
+  --text:          #FAFAF9;
+  --text-muted:    #A8A29E;
+  --text-subtle:   #78716C;
+  --border:        #292524;
+  --border-strong: #44403C;
+  --accent:        #F59E0B;
+  --accent-hover:  #FCD9A0;
+  --accent-soft:   rgba(245, 158, 11, 0.12);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Pure white theme ── */
+[data-theme="pure"] {
+  --bg:      #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-2: var(--ink-50);
+  --border:  var(--ink-100);
+}

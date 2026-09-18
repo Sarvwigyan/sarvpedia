@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="hi" data-theme="light" data-locale="hi-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket Hub: Cricketers, Scores & News</title>
+    <title>क्रिकेट हब (Cricket Hub) — Sarvpedia | सर्वविज्ञान</title>
+    <!-- ── Language & i18n ── -->
+    <link rel="alternate" hreflang="hi" href="https://sarvwigyan.github.io/sarvpedia/Cricket/Cricketo.html">
+    <link rel="alternate" hreflang="en" href="https://sarvwigyan.github.io/sarvpedia/en/Cricket/Cricketo.html">
+    <link rel="alternate" hreflang="x-default" href="https://sarvwigyan.github.io/sarvpedia/Cricket/Cricketo.html">
+
+    <!-- ── Sarvwigyan ecosystem link ── -->
+    <link rel="me" href="https://sarvwigyan.github.io/">
+    <link rel="sibling" href="https://sarvwigyan.github.io/sarvstore/" title="Kosh">
+
+    <link rel="icon" type="image/svg+xml" href="../Resources/ganesh.svg">
+    <link rel="stylesheet" href="../css/main.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
@@ -137,13 +147,44 @@
     </style>
 </head>
 <body class="antialiased">
-    <!-- Header Section -->
-    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold text-green-500 mb-2 md:mb-0 tracking-wide flex items-center">
-                <i class="fas fa-cricket-bat-ball mr-2"></i> CRICKET HUB
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                <a href="https://sarvwigyan.github.io/" class="header-brand" aria-label="सर्वविज्ञान मुख्य पृष्ठ">
+                    <img src="../Resources/ganesh.svg" alt="गणपति प्रतीक" class="logo-img">
+                    <span class="brand-title" lang="hi">सर्वविज्ञान</span>
+                </a>
+                <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                <a href="../index.html" class="site-tag" lang="hi">सर्वपीडिया</a>
+            </div>
+
+            <div class="header-actions">
+                <a href="../index.html" class="btn btn-ghost btn-sm" aria-label="खोज" lang="hi">
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                    <span class="search-trigger-text" lang="hi">खोजें...</span>
+                </a>
+
+                <div class="lang-switcher" role="group" aria-label="भाषा">
+                    <button type="button" class="lang-btn is-active" data-lang="hi" aria-pressed="true" lang="hi">हि</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="रूप बदलें" title="रूप बदलें">
+                    <i class="fas fa-moon theme-icon-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun theme-icon-sun" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Navigation -->
+    <nav class="bg-gray-900 text-white shadow-lg sticky top-[72px] z-40">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-xl font-extrabold text-green-500 mb-2 md:mb-0 tracking-wide flex items-center">
+                <i class="fas fa-cricket-bat-ball mr-2"></i> क्रिकेट हब · CRICKET HUB
             </a>
-            <div class="flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-lg">
+            <div class="flex flex-wrap justify-center items-center space-x-4 md:space-x-8 text-base">
                 <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8">
                     <li><a href="#home" class="hover:text-green-500 transition duration-300 font-medium">Home</a></li>
                     <li><a href="#cricketers" class="hover:text-green-500 transition duration-300 font-medium">Cricketers</a></li>
@@ -156,8 +197,8 @@
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero-background h-screen flex items-center justify-center text-center text-white p-4" data-aos="fade-up">
@@ -450,18 +491,34 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-300">© 2025 Cricket Hub. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="text-gray-400 hover:text-green-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-gray-400 hover:text-green-500 transition duration-300"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-gray-400 hover:text-green-500 transition duration-300"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-green-500 transition duration-300"><i class="fab fa-youtube"></i></a>
+    <!-- ═══════════════════ ECOSYSTEM FOOTER ═══════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-status" lang="hi">
+                <span class="footer-status-indicator" aria-hidden="true"></span>
+                सभी प्रणालियाँ सक्रिय · <span lang="en" class="term mono">build v3.4</span>
             </div>
+
+            <p class="footer-copyright" lang="hi">© २०२६ सर्वविज्ञान</p>
+
+            <nav class="footer-links" aria-label="पादलेख नेविगेशन">
+                <a href="https://sarvwigyan.github.io/" lang="hi">मुख्य पृष्ठ</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="../index.html" lang="hi">सर्वपीडिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/sarvstore/" lang="hi">कोष</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/feedback.html" lang="hi">प्रतिक्रिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/privacy-policy.html" lang="hi">गोपनीयता</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/Community/community.html" lang="hi">संघ</a>
+            </nav>
         </div>
     </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/lang-switcher.js"></script>
 
     <!-- Back to Top Button -->
     <button onclick="scrollToTop()" class="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">

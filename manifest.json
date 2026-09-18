@@ -1,15 +1,17 @@
 {
-  "name": "Sarvstore",
-  "short_name": "Sarvstore",
+  "name": "Sarvpedia",
+  "short_name": "Sarvpedia",
+  "description": "गणपति की कृपा से ज्ञान का विस्तार।",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0a192f",
+  "background_color": "#FBF6EC",
+  "theme_color": "#C5442C",
+  "lang": "hi",
   "icons": [
     {
-      "src": "https://sarvwigyan.github.io/resources/Sarvstore.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "Resources/ganesh.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     }
   ]
 }
