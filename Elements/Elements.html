@@ -1,422 +1,482 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="hi" data-theme="light" data-locale="hi-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarvpedia - Elements</title>
+    <title>तत्व सूची — आवर्त सारणी | सर्वपीडिया</title>
+    <!-- ── Language & i18n ── -->
+    <link rel="alternate" hreflang="hi" href="https://sarvwigyan.github.io/sarvpedia/Elements/Elements.html">
+    <link rel="alternate" hreflang="en" href="https://sarvwigyan.github.io/sarvpedia/en/Elements/Elements.html">
+    <link rel="alternate" hreflang="x-default" href="https://sarvwigyan.github.io/sarvpedia/Elements/Elements.html">
+
+    <!-- ── Sarvwigyan ecosystem link ── -->
+    <link rel="me" href="https://sarvwigyan.github.io/">
+    <link rel="sibling" href="https://sarvwigyan.github.io/sarvstore/" title="Kosh">
+
+    <meta name="description" content="आवर्त सारणी के समस्त 118 तत्वों की सूची — हिंदी विवरण सहित।">
+    <meta name="keywords" content="periodic table, elements list, तत्व सूची, आवर्त सारणी, सर्वपीडिया">
+    <link rel="icon" type="image/svg+xml" href="../Resources/ganesh.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Mukta:wght@400;500;600;700;800&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="element-styles.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        header {
-            background: #ffffff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .search-container {
-            margin: 20px auto;
-            width: 90%;
-            max-width: 600px;
+        .el-search-wrap {
+            max-width: 640px;
+            margin: 1.5rem auto 2rem;
+            padding: 0 1.5rem;
             position: relative;
-            display: flex;
-            align-items: center;
         }
-
-        #searchBar {
+        .el-search {
             width: 100%;
-            padding: 15px;
-            padding-right: 45px; /* Space for clear button */
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1em;
-            background: rgba(255, 255, 255, 0.1);
-            color: #0f172a;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        #searchBar:focus {
+            padding: 1rem 3rem 1rem 3rem;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-pill);
+            background: var(--surface);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 1rem;
             outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-
-        .clear-btn {
+        .el-search:focus {
+            border-color: var(--brand);
+            box-shadow: var(--shadow-md), 0 0 0 4px var(--brand-tint);
+        }
+        .el-search-icon {
             position: absolute;
-            right: 10px;
-            width: 24px;
-            height: 24px;
-            border: none;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #0f172a;
-            font-size: 14px;
-            line-height: 24px;
-            text-align: center;
-            cursor: pointer;
+            left: 2.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .el-clear {
+            position: absolute;
+            right: 2.35rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.9rem;
+            height: 1.9rem;
             display: none;
-            transition: background-color 0.3s ease;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.75rem;
+            padding: 0;
+            transition: all 0.2s ease;
+        }
+        .el-clear.visible { display: flex; }
+        .el-clear:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+        .el-table-wrap {
+            max-width: 1080px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
+        }
+        .el-table-scroll {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .el-table {
+            width: 100%;
+            min-width: 760px;
+            border-collapse: collapse;
+            font-family: var(--font-hindi);
+        }
+        .el-table th {
+            background: linear-gradient(135deg, var(--brand), var(--brand-hover));
+            color: #fff;
+            padding: 0.95rem 0.85rem;
+            text-align: left;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-family: var(--font-hindi);
+        }
+        .el-table td {
+            padding: 0.85rem 0.85rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.92rem;
+            color: var(--text);
+            vertical-align: middle;
+        }
+        .el-table tr:hover td { background: rgba(197, 68, 44, 0.04); }
+        .el-table tr:last-child td { border-bottom: none; }
+
+        .el-table td:first-child {
+            font-family: 'Inter', monospace;
+            font-weight: 700;
+            color: var(--gold-shadow);
+            width: 70px;
+            text-align: center;
+        }
+        .el-table td.el-mass {
+            font-family: 'Inter', monospace;
+            color: var(--text-muted);
+        }
+        .el-table td.el-num {
+            text-align: center;
+            color: var(--text-muted);
+            font-family: 'Inter', monospace;
+            width: 100px;
         }
 
-        .clear-btn:hover {
-            background-color: rgba(255, 255, 255, 0.5);
+        .el-empty {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            font-family: var(--font-hindi);
         }
-
-        .clear-btn.active {
+        .el-empty i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
             display: block;
         }
-
-        #suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            max-height: 200px;
-            overflow-y: auto;
-            color: #333;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: none;
-            z-index: 1000;
-        }
-
-        #suggestions div {
-            padding: 10px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        #suggestions div:hover {
-            background: #3498db;
-            color: #0f172a;
-        }
-
-        .table-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-            background: #ffffff; border: 1px solid #e2e8f0;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s;
-        }
-
-        th {
-            background: #3498db;
-            color: #0f172a;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        tr:nth-child(even) {
-            background: #f8fafc; border: 1px solid #e2e8f0;
-        }
-
-        tr:hover {
-            background: rgba(52, 152, 219, 0.2);
-        }
-
-        td a {
-            color: #f5a623;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        td a:hover {
-            color: #0f172a;
-        }
-
-        footer {
-            background: #ffffff;
-            padding: 15px;
-            text-align: center;
-            margin-top: 20px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            #searchBar { font-size: 1em; padding: 12px; padding-right: 40px; }
-            th, td { padding: 8px; font-size: 0.9em; }
-            .clear-btn { right: 8px; }
-        }
     </style>
-    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <h1>Elements</h1>
+
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div style="display: inline-flex; align-items: center; gap: var(--space-2);">
+                <a href="https://sarvwigyan.github.io/" class="header-brand" aria-label="सर्वविज्ञान मुख्य पृष्ठ">
+                    <img src="../Resources/ganesh.svg" alt="गणपति प्रतीक" class="logo-img">
+                    <span class="brand-title" lang="hi">सर्वविज्ञान</span>
+                </a>
+                <span class="breadcrumb-separator" aria-hidden="true">›</span>
+                <a href="../index.html" class="site-tag" lang="hi">सर्वपीडिया</a>
+            </div>
+
+            <div class="header-actions">
+                <a href="../index.html" class="btn btn-ghost btn-sm" aria-label="खोज" lang="hi">
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                    <span class="search-trigger-text" lang="hi">खोजें...</span>
+                </a>
+
+                <div class="lang-switcher" role="group" aria-label="भाषा">
+                    <button type="button" class="lang-btn is-active" data-lang="hi" aria-pressed="true" lang="hi">हि</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+                </div>
+
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="रूप बदलें" title="रूप बदलें">
+                    <i class="fas fa-moon theme-icon-moon" aria-hidden="true"></i>
+                    <i class="fas fa-sun theme-icon-sun" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="Search elements...">
-        <button class="clear-btn" id="clearBtn">×</button>
-        <div id="suggestions"></div>
-    </div>
+    <main>
+        <section class="tp-hero">
+            <span class="tp-eyebrow">
+                <span class="om" aria-hidden="true">ॐ</span>
+                रासायनिक तत्व
+            </span>
+            <h1 class="tp-title">समस्त तत्व</h1>
+            <p class="tp-subtitle">
+                आवर्त सारणी के समस्त ज्ञात तत्वों की सूची — <strong>118 तत्व</strong><br>
+                <span style="font-size:0.85em; opacity:0.8;">(अंग्रेज़ी अथवा हिंदी — किसी भी नाम से खोजें)</span>
+            </p>
+        </section>
 
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Atomic No.</th>
-                    <th>Element</th>
-                    <th>Atomic Mass</th>
-                    <th>Electrons</th>
-                    <th>Protons</th>
-                    <th>Neutrons</th>
-                </tr>
-            </thead>
-            <tbody id="elementTable">
-                <!-- Table populated dynamically via JavaScript -->
-            </tbody>
-        </table>
-    </div>
+        <div class="el-search-wrap">
+            <i class="fas fa-magnifying-glass el-search-icon" aria-hidden="true"></i>
+            <input
+                type="text"
+                id="elSearch"
+                class="el-search"
+                placeholder="खोजें — Hydrogen, हाइड्रोजन, Fe, Iron..."
+                aria-label="तत्व खोजें"
+                autocomplete="off"
+                spellcheck="false">
+            <button class="el-clear" id="elClear" type="button" aria-label="खोज साफ़ करें">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
 
-    <footer>
-        <p>Copyright © Sarvpedia. All Rights Reserved.</p>
+        <div class="el-table-wrap">
+            <div class="el-table-scroll">
+                <table class="el-table">
+                    <thead>
+                        <tr>
+                            <th>क्र.</th>
+                            <th>तत्व</th>
+                            <th>परमाणु भार</th>
+                            <th>इलेक्ट्रॉन</th>
+                            <th>प्रोटॉन</th>
+                            <th>न्यूट्रॉन</th>
+                        </tr>
+                    </thead>
+                    <tbody id="elTableBody"></tbody>
+                </table>
+            </div>
+            <div class="el-empty" id="elEmpty" style="display: none;">
+                <i class="fas fa-feather"></i>
+                कोई तत्व नहीं मिला
+            </div>
+        </div>
+    </main>
+
+    <footer class="tp-footer">
+        <p class="shloka">॥ श्री गणेशाय नमः ॥</p>
+        <p>© २०२६ सर्वपीडिया · सर्वविज्ञान</p>
     </footer>
 
     <script>
+        /* ---------- तत्व सूची (English नाम + हिंदी उपनाम) ---------- */
         const elements = [
-    { atomicNo: 1, name: "Hydrogen", mass: "1.008", electrons: 1, protons: 1, neutrons: 0, link: "Hydrogen_sarvpedia.html" },
-    { atomicNo: 2, name: "Helium", mass: "4.0026", electrons: 2, protons: 2, neutrons: 2, link: "Helium_sarvpedia.html" },
-    { atomicNo: 3, name: "Lithium", mass: "6.94", electrons: 3, protons: 3, neutrons: 4, link: "Lithium_sarvpedia.html" },
-    { atomicNo: 4, name: "Beryllium", mass: "9.0122", electrons: 4, protons: 4, neutrons: 5, link: "Beryllium_sarvpedia.html" },
-    { atomicNo: 5, name: "Boron", mass: "10.81", electrons: 5, protons: 5, neutrons: 6, link: "Boron_sarvpedia.html" },
-    { atomicNo: 6, name: "Carbon", mass: "12.011", electrons: 6, protons: 6, neutrons: 6, link: "Carbon_sarvpedia.html" },
-    { atomicNo: 7, name: "Nitrogen", mass: "14.007", electrons: 7, protons: 7, neutrons: 7, link: "Nitrogen_sarvpedia.html" },
-    { atomicNo: 8, name: "Oxygen", mass: "15.999", electrons: 8, protons: 8, neutrons: 8, link: "Oxygen_sarvpedia.html" },
-    { atomicNo: 9, name: "Fluorine", mass: "18.998", electrons: 9, protons: 9, neutrons: 10, link: "Fluorine_sarvpedia.html" },
-    { atomicNo: 10, name: "Neon", mass: "20.180", electrons: 10, protons: 10, neutrons: 10, link: "Neon_sarvpedia.html" },
-    { atomicNo: 11, name: "Sodium", mass: "22.990", electrons: 11, protons: 11, neutrons: 12, link: "Sodium_sarvpedia.html" },
-    { atomicNo: 12, name: "Magnesium", mass: "24.305", electrons: 12, protons: 12, neutrons: 12, link: "Magnesium_sarvpedia.html" },
-    { atomicNo: 13, name: "Aluminium", mass: "26.982", electrons: 13, protons: 13, neutrons: 14, link: "Aluminium_sarvpedia.html" },
-    { atomicNo: 14, name: "Silicon", mass: "28.085", electrons: 14, protons: 14, neutrons: 14, link: "Silicon_sarvpedia.html" },
-    { atomicNo: 15, name: "Phosphorus", mass: "30.974", electrons: 15, protons: 15, neutrons: 16, link: "Phosphorus_sarvpedia.html" },
-    { atomicNo: 16, name: "Sulfur", mass: "32.06", electrons: 16, protons: 16, neutrons: 16, link: "Sulfur_sarvpedia.html" },
-    { atomicNo: 17, name: "Chlorine", mass: "35.45", electrons: 17, protons: 17, neutrons: 18, link: "Chlorine_sarvpedia.html" },
-    { atomicNo: 18, name: "Argon", mass: "39.948", electrons: 18, protons: 18, neutrons: 22, link: "Argon_sarvpedia.html" },
-    { atomicNo: 19, name: "Potassium", mass: "39.098", electrons: 19, protons: 19, neutrons: 20, link: "Potassium_sarvpedia.html" },
-    { atomicNo: 20, name: "Calcium", mass: "40.078", electrons: 20, protons: 20, neutrons: 20, link: "Calcium_sarvpedia.html" },
-    { atomicNo: 21, name: "Scandium", mass: "44.956", electrons: 21, protons: 21, neutrons: 24, link: "Scandium_sarvpedia.html" },
-    { atomicNo: 22, name: "Titanium", mass: "47.867", electrons: 22, protons: 22, neutrons: 25, link: "Titanium_sarvpedia.html" },
-    { atomicNo: 23, name: "Vanadium", mass: "50.9415", electrons: 23, protons: 23, neutrons: 28, link: "Vanadium_sarvpedia.html" },
-    { atomicNo: 24, name: "Chromium", mass: "52.0", electrons: 24, protons: 24, neutrons: 28, link: "Chromium_sarvpedia.html" },
-    { atomicNo: 25, name: "Manganese", mass: "54.938044", electrons: 25, protons: 25, neutrons: 30, link: "Manganese_sarvpedia.html" },
-    { atomicNo: 26, name: "Iron", mass: "55.845", electrons: 26, protons: 26, neutrons: 30, link: "Iron_sarvpedia.html" },
-    { atomicNo: 27, name: "Cobalt", mass: "58.933", electrons: 27, protons: 27, neutrons: 32, link: "Cobalt_sarvpedia.html" },
-    { atomicNo: 28, name: "Nickel", mass: "58.6934", electrons: 28, protons: 28, neutrons: 31, link: "Nickel_sarvpedia.html" },
-    { atomicNo: 29, name: "Copper", mass: "63.546", electrons: 29, protons: 29, neutrons: 35, link: "Copper_sarvpedia.html" },
-    { atomicNo: 30, name: "Zinc", mass: "65.38", electrons: 30, protons: 30, neutrons: 35, link: "Zinc_sarvpedia.html" },
-    { atomicNo: 31, name: "Gallium", mass: "69.723", electrons: 31, protons: 31, neutrons: 38, link: "Gallium_sarvpedia.html" },
-    { atomicNo: 32, name: "Germanium", mass: "72.63", electrons: 32, protons: 32, neutrons: 41, link: "Germanium_sarvpedia.html" },
-    { atomicNo: 33, name: "Arsenic", mass: "74.921595", electrons: 33, protons: 33, neutrons: 42, link: "Arsenic_sarvpedia.html" },
-    { atomicNo: 34, name: "Selenium", mass: "78.971", electrons: 34, protons: 34, neutrons: 45, link: "Selenium_sarvpedia.html" },
-    { atomicNo: 35, name: "Bromine", mass: "79.904", electrons: 35, protons: 35, neutrons: 45, link: "Bromine_sarvpedia.html" },
-    { atomicNo: 36, name: "Krypton", mass: "83.798", electrons: 36, protons: 36, neutrons: 48, link: "Krypton_sarvpedia.html" },
-    { atomicNo: 37, name: "Rubidium", mass: "85.4678", electrons: 37, protons: 37, neutrons: 48, link: "Rubidium_sarvpedia.html" },
-    { atomicNo: 38, name: "Strontium", mass: "87.62", electrons: 38, protons: 38, neutrons: 50, link: "Strontium_sarvpedia.html" },
-    { atomicNo: 39, name: "Yttrium", mass: "88.90584", electrons: 39, protons: 39, neutrons: 50, link: "Yttrium_sarvpedia.html" },
-    { atomicNo: 40, name: "Zirconium", mass: "91.224", electrons: 40, protons: 40, neutrons: 51, link: "Zirconium_sarvpedia.html" },
-    { atomicNo: 41, name: "Niobium", mass: "92.90638", electrons: 41, protons: 41, neutrons: 52, link: "Niobium_sarvpedia.html" },
-    { atomicNo: 42, name: "Molybdenum", mass: "95.95", electrons: 42, protons: 42, neutrons: 54, link: "Molybdenum_sarvpedia.html" },
-    { atomicNo: 43, name: "Technetium", mass: "98", electrons: 43, protons: 43, neutrons: 55, link: "Technetium_sarvpedia.html" },
-    { atomicNo: 44, name: "Ruthenium", mass: "101.07", electrons: 44, protons: 44, neutrons: 57, link: "Ruthenium_sarvpedia.html" },
-    { atomicNo: 45, name: "Rhodium", mass: "102.91", electrons: 45, protons: 45, neutrons: 58, link: "Rhodium_sarvpedia.html" },
-    { atomicNo: 46, name: "Palladium", mass: "106.42", electrons: 46, protons: 46, neutrons: 60, link: "Palladium_sarvpedia.html" },
-    { atomicNo: 47, name: "Silver", mass: "107.8682", electrons: 47, protons: 47, neutrons: 61, link: "Silver_sarvpedia.html" },
-    { atomicNo: 48, name: "Cadmium", mass: "112.414", electrons: 48, protons: 48, neutrons: 64, link: "Cadmium_sarvpedia.html" },
-    { atomicNo: 49, name: "Indium", mass: "114.818", electrons: 49, protons: 49, neutrons: 66, link: "Indium_sarvpedia.html" },
-    { atomicNo: 50, name: "Tin", mass: "118.71", electrons: 50, protons: 50, neutrons: 69, link: "Tin_sarvpedia.html" },
-    { atomicNo: 51, name: "Antimony", mass: "121.76", electrons: 51, protons: 51, neutrons: 71, link: "Antimony_sarvpedia.html" },
-    { atomicNo: 52, name: "Tellurium", mass: "127.6", electrons: 52, protons: 52, neutrons: 73, link: "Tellurium_sarvpedia.html" },
-    { atomicNo: 53, name: "Iodine", mass: "126.90447", electrons: 53, protons: 53, neutrons: 74, link: "Iodine_sarvpedia.html" },
-    { atomicNo: 54, name: "Xenon", mass: "131.293", electrons: 54, protons: 54, neutrons: 77, link: "Xenon_sarvpedia.html" },
-    { atomicNo: 55, name: "Caesium", mass: "132.90545196", electrons: 55, protons: 55, neutrons: 78, link: "Caesium_sarvpedia.html" },
-    { atomicNo: 56, name: "Barium", mass: "137.327", electrons: 56, protons: 56, neutrons: 80, link: "Barium_sarvpedia.html" },
-    { atomicNo: 57, name: "Lanthanum", mass: "138.90547", electrons: 57, protons: 57, neutrons: 82, link: "Lanthanum_sarvpedia.html" },
-    { atomicNo: 58, name: "Cerium", mass: "140.116", electrons: 58, protons: 58, neutrons: 83, link: "Cerium_sarvpedia.html" },
-    { atomicNo: 59, name: "Praseodymium", mass: "140.90766", electrons: 59, protons: 59, neutrons: 84, link: "Praseodymium_sarvpedia.html" },
-    { atomicNo: 60, name: "Neodymium", mass: "144.242", electrons: 60, protons: 60, neutrons: 86, link: "Neodymium_sarvpedia.html" },
-    { atomicNo: 61, name: "Promethium", mass: "145", electrons: 61, protons: 61, neutrons: 88, link: "Promethium_sarvpedia.html" },
-    { atomicNo: 62, name: "Samarium", mass: "150.36", electrons: 62, protons: 62, neutrons: 89, link: "Samarium_sarvpedia.html" },
-    { atomicNo: 63, name: "Europium", mass: "151.964", electrons: 63, protons: 63, neutrons: 92, link: "Europium_sarvpedia.html" },
-    { atomicNo: 64, name: "Gadolinium", mass: "157.25", electrons: 64, protons: 64, neutrons: 93, link: "Gadolinium_sarvpedia.html" },
-    { atomicNo: 65, name: "Terbium", mass: "158.92535", electrons: 65, protons: 65, neutrons: 94, link: "Terbium_sarvpedia.html" },
-    { atomicNo: 66, name: "Dysprosium", mass: "162.5", electrons: 66, protons: 66, neutrons: 96, link: "Dysprosium_sarvpedia.html" },
-    { atomicNo: 67, name: "Holmium", mass: "164.93033", electrons: 67, protons: 67, neutrons: 97, link: "Holmium_sarvpedia.html" },
-    { atomicNo: 68, name: "Erbium", mass: "167.259", electrons: 68, protons: 68, neutrons: 99, link: "Erbium_sarvpedia.html" },
-    { atomicNo: 69, name: "Thulium", mass: "168.93422", electrons: 69, protons: 69, neutrons: 100, link: "Thulium_sarvpedia.html" },
-    { atomicNo: 70, name: "Ytterbium", mass: "173.04", electrons: 70, protons: 70, neutrons: 103, link: "Ytterbium_sarvpedia.html" },
-    { atomicNo: 71, name: "Lutetium", mass: "175.0", electrons: 71, protons: 71, neutrons: 104, link: "Lutetium_sarvpedia.html" },
-    { atomicNo: 72, name: "Hafnium", mass: "178.49", electrons: 72, protons: 72, neutrons: 106, link: "Hafnium_sarvpedia.html" },
-    { atomicNo: 73, name: "Tantalum", mass: "180.94788", electrons: 73, protons: 73, neutrons: 108, link: "Tantalum_sarvpedia.html" },
-    { atomicNo: 74, name: "Tungsten", mass: "183.84", electrons: 74, protons: 74, neutrons: 110, link: "Tungsten_sarvpedia.html" },
-    { atomicNo: 75, name: "Rhenium", mass: "186.207", electrons: 75, protons: 75, neutrons: 111, link: "Rhenium_sarvpedia.html" },
-    { atomicNo: 76, name: "Osmium", mass: "190.23", electrons: 76, protons: 76, neutrons: 113, link: "Osmium_sarvpedia.html" },
-    { atomicNo: 77, name: "Iridium", mass: "192.217", electrons: 77, protons: 77, neutrons: 115, link: "Iridium_sarvpedia.html" },
-    { atomicNo: 78, name: "Platinum", mass: "195.084", electrons: 78, protons: 78, neutrons: 117, link: "Platinum_sarvpedia.html" },
-    { atomicNo: 79, name: "Gold", mass: "196.966569", electrons: 79, protons: 79, neutrons: 118, link: "Gold_sarvpedia.html" },
-    { atomicNo: 80, name: "Mercury", mass: "200.592", electrons: 80, protons: 80, neutrons: 120, link: "Mercury_sarvpedia.html" },
-    { atomicNo: 81, name: "Thallium", mass: "204.38", electrons: 81, protons: 81, neutrons: 121, link: "Thallium_sarvpedia.html" },
-    { atomicNo: 82, name: "Lead", mass: "207.2", electrons: 82, protons: 82, neutrons: 123, link: "Lead_sarvpedia.html" },
-    { atomicNo: 83, name: "Bismuth", mass: "208.9804", electrons: 83, protons: 83, neutrons: 126, link: "Bismuth_sarvpedia.html" },
-    { atomicNo: 84, name: "Polonium", mass: "209", electrons: 84, protons: 84, neutrons: 127, link: "Polonium_sarvpedia.html" },
-    { atomicNo: 85, name: "Astatine", mass: "210", electrons: 85, protons: 85, neutrons: 130, link: "Astatine_sarvpedia.html" },
-    { atomicNo: 86, name: "Radon", mass: "222", electrons: 86, protons: 86, neutrons: 132, link: "Radon_sarvpedia.html" },
-    { atomicNo: 87, name: "Francium", mass: "223", electrons: 87, protons: 87, neutrons: 133, link: "Francium_sarvpedia.html" },
-    { atomicNo: 88, name: "Radium", mass: "226.0254", electrons: 88, protons: 88, neutrons: 136, link: "Radium_sarvpedia.html" },
-    { atomicNo: 89, name: "Actinium", mass: "227", electrons: 89, protons: 89, neutrons: 138, link: "Actinium_sarvpedia.html" },
-    { atomicNo: 90, name: "Thorium", mass: "232.03805", electrons: 90, protons: 90, neutrons: 140, link: "Thorium_sarvpedia.html" },
-    { atomicNo: 91, name: "Protactinium", mass: "231.03588", electrons: 91, protons: 91, neutrons: 143, link: "Protactinium_sarvpedia.html" },
-    { atomicNo: 92, name: "Uranium", mass: "238.02891", electrons: 92, protons: 92, neutrons: 145, link: "Uranium_sarvpedia.html" },
-    { atomicNo: 93, name: "Neptunium", mass: "237", electrons: 93, protons: 93, neutrons: 148, link: "Neptunium_sarvpedia.html" },
-    { atomicNo: 94, name: "Plutonium", mass: "244", electrons: 94, protons: 94, neutrons: 150, link: "Plutonium_sarvpedia.html" },
-    { atomicNo: 95, name: "Americium", mass: "243", electrons: 95, protons: 95, neutrons: 152, link: "Americium_sarvpedia.html" },
-    { atomicNo: 96, name: "Curium", mass: "247", electrons: 96, protons: 96, neutrons: 155, link: "Curium_sarvpedia.html" },
-    { atomicNo: 97, name: "Berkelium", mass: "247", electrons: 97, protons: 97, neutrons: 157, link: "Berkelium_sarvpedia.html" },
-    { atomicNo: 98, name: "Californium", mass: "251", electrons: 98, protons: 98, neutrons: 159, link: "Californium_sarvpedia.html" },
-    { atomicNo: 99, name: "Einsteinium", mass: "252", electrons: 99, protons: 99, neutrons: 161, link: "Einsteinium_sarvpedia.html" },
-    { atomicNo: 100, name: "Fermium", mass: "257", electrons: 100, protons: 100, neutrons: 164, link: "Fermium_sarvpedia.html" },
-    { atomicNo: 101, name: "Mendelevium", mass: "258", electrons: 101, protons: 101, neutrons: 165, link: "Mendelevium_sarvpedia.html" },
-    { atomicNo: 102, name: "Nobelium", mass: "259", electrons: 102, protons: 102, neutrons: 167, link: "Nobelium_sarvpedia.html" },
-    { atomicNo: 103, name: "Lawrencium", mass: "262", electrons: 103, protons: 103, neutrons: 169, link: "Lawrencium_sarvpedia.html" },
-    { atomicNo: 104, name: "Rutherfordium", mass: "267", electrons: 104, protons: 104, neutrons: 170, link: "Rutherfordium_sarvpedia.html" },
-    { atomicNo: 105, name: "Dubnium", mass: "270", electrons: 105, protons: 105, neutrons: 173, link: "Dubnium_sarvpedia.html" },
-    { atomicNo: 106, name: "Seaborgium", mass: "271", electrons: 106, protons: 106, neutrons: 175, link: "Seaborgium_sarvpedia.html" },
-    { atomicNo: 107, name: "Bohrium", mass: "270", electrons: 107, protons: 107, neutrons: 177, link: "Bohrium_sarvpedia.html" },
-    { atomicNo: 108, name: "Hassium", mass: "277", electrons: 108, protons: 108, neutrons: 178, link: "Hassium_sarvpedia.html" },
-    { atomicNo: 109, name: "Meitnerium", mass: "278", electrons: 109, protons: 109, neutrons: 180, link: "Meitnerium_sarvpedia.html" },
-    { atomicNo: 110, name: "Darmstadtium", mass: "281", electrons: 110, protons: 110, neutrons: 181, link: "Darmstadtium_sarvpedia.html" },
-    { atomicNo: 111, name: "Roentgenium", mass: "280", electrons: 111, protons: 111, neutrons: 183, link: "Roentgenium_sarvpedia.html" },
-    { atomicNo: 112, name: "Copernicium", mass: "285", electrons: 112, protons: 112, neutrons: 185, link: "Copernicium_sarvpedia.html" },
-    { atomicNo: 113, name: "Nihonium", mass: "284", electrons: 113, protons: 113, neutrons: 187, link: "Nihonium_sarvpedia.html" },
-    { atomicNo: 114, name: "Flerovium", mass: "289", electrons: 114, protons: 114, neutrons: 188, link: "Flerovium_sarvpedia.html" },
-    { atomicNo: 115, name: "Moscovium", mass: "288", electrons: 115, protons: 115, neutrons: 190, link: "Moscovium_sarvpedia.html" },
-    { atomicNo: 116, name: "Livermorium", mass: "293", electrons: 116, protons: 116, neutrons: 191, link: "Livermorium_sarvpedia.html" },
-    { atomicNo: 117, name: "Tennessine", mass: "294", electrons: 117, protons: 117, neutrons: 193, link: "Tennessine_sarvpedia.html" },
-    { atomicNo: 118, name: "Oganesson", mass: "294", electrons: 118, protons: 118, neutrons: 176, link: "Oganesson_sarvpedia.html" }
-];
+            { no: 1, name: "Hydrogen", hi: "हाइड्रोजन", mass: "1.008", e: 1, p: 1, n: 0, link: "Hydrogen_sarvpedia.html" },
+            { no: 2, name: "Helium", hi: "हीलियम", mass: "4.0026", e: 2, p: 2, n: 2, link: "Helium_sarvpedia.html" },
+            { no: 3, name: "Lithium", hi: "लिथियम", mass: "6.94", e: 3, p: 3, n: 4, link: "Lithium_sarvpedia.html" },
+            { no: 4, name: "Beryllium", hi: "बेरिलियम", mass: "9.0122", e: 4, p: 4, n: 5, link: "Beryllium_sarvpedia.html" },
+            { no: 5, name: "Boron", hi: "बोरॉन", mass: "10.81", e: 5, p: 5, n: 6, link: "Boron_sarvpedia.html" },
+            { no: 6, name: "Carbon", hi: "कार्बन", mass: "12.011", e: 6, p: 6, n: 6, link: "Carbon_sarvpedia.html" },
+            { no: 7, name: "Nitrogen", hi: "नाइट्रोजन", mass: "14.007", e: 7, p: 7, n: 7, link: "Nitrogen_sarvpedia.html" },
+            { no: 8, name: "Oxygen", hi: "ऑक्सीजन", mass: "15.999", e: 8, p: 8, n: 8, link: "Oxygen_sarvpedia.html" },
+            { no: 9, name: "Fluorine", hi: "फ्लोरीन", mass: "18.998", e: 9, p: 9, n: 10, link: "Fluorine_sarvpedia.html" },
+            { no: 10, name: "Neon", hi: "नियॉन", mass: "20.180", e: 10, p: 10, n: 10, link: "Neon_sarvpedia.html" },
+            { no: 11, name: "Sodium", hi: "सोडियम", mass: "22.990", e: 11, p: 11, n: 12, link: "Sodium_sarvpedia.html" },
+            { no: 12, name: "Magnesium", hi: "मैग्नीशियम", mass: "24.305", e: 12, p: 12, n: 12, link: "Magnesium_sarvpedia.html" },
+            { no: 13, name: "Aluminium", hi: "एल्युमिनियम", mass: "26.982", e: 13, p: 13, n: 14, link: "Aluminium_sarvpedia.html" },
+            { no: 14, name: "Silicon", hi: "सिलिकॉन", mass: "28.085", e: 14, p: 14, n: 14, link: "Silicon_sarvpedia.html" },
+            { no: 15, name: "Phosphorus", hi: "फॉस्फोरस", mass: "30.974", e: 15, p: 15, n: 16, link: "Phosphorus_sarvpedia.html" },
+            { no: 16, name: "Sulfur", hi: "सल्फर", mass: "32.06", e: 16, p: 16, n: 16, link: "Sulfur_sarvpedia.html" },
+            { no: 17, name: "Chlorine", hi: "क्लोरीन", mass: "35.45", e: 17, p: 17, n: 18, link: "Chlorine_sarvpedia.html" },
+            { no: 18, name: "Argon", hi: "आर्गन", mass: "39.948", e: 18, p: 18, n: 22, link: "Argon_sarvpedia.html" },
+            { no: 19, name: "Potassium", hi: "पोटैशियम", mass: "39.098", e: 19, p: 19, n: 20, link: "Potassium_sarvpedia.html" },
+            { no: 20, name: "Calcium", hi: "कैल्शियम", mass: "40.078", e: 20, p: 20, n: 20, link: "Calcium_sarvpedia.html" },
+            { no: 21, name: "Scandium", hi: "स्कैंडियम", mass: "44.956", e: 21, p: 21, n: 24, link: "Scandium_sarvpedia.html" },
+            { no: 22, name: "Titanium", hi: "टाइटेनियम", mass: "47.867", e: 22, p: 22, n: 25, link: "Titanium_sarvpedia.html" },
+            { no: 23, name: "Vanadium", hi: "वैनेडियम", mass: "50.9415", e: 23, p: 23, n: 28, link: "Vanadium_sarvpedia.html" },
+            { no: 24, name: "Chromium", hi: "क्रोमियम", mass: "52.0", e: 24, p: 24, n: 28, link: "Chromium_sarvpedia.html" },
+            { no: 25, name: "Manganese", hi: "मैंगनीज़", mass: "54.938", e: 25, p: 25, n: 30, link: "Manganese_sarvpedia.html" },
+            { no: 26, name: "Iron", hi: "लोहा", mass: "55.845", e: 26, p: 26, n: 30, link: "Iron_sarvpedia.html" },
+            { no: 27, name: "Cobalt", hi: "कोबाल्ट", mass: "58.933", e: 27, p: 27, n: 32, link: "Cobalt_sarvpedia.html" },
+            { no: 28, name: "Nickel", hi: "निकल", mass: "58.693", e: 28, p: 28, n: 31, link: "Nickel_sarvpedia.html" },
+            { no: 29, name: "Copper", hi: "ताम्र", mass: "63.546", e: 29, p: 29, n: 35, link: "Copper_sarvpedia.html" },
+            { no: 30, name: "Zinc", hi: "जस्ता", mass: "65.38", e: 30, p: 30, n: 35, link: "Zinc_sarvpedia.html" },
+            { no: 31, name: "Gallium", hi: "गैलियम", mass: "69.723", e: 31, p: 31, n: 38, link: "Gallium_sarvpedia.html" },
+            { no: 32, name: "Germanium", hi: "जर्मेनियम", mass: "72.63", e: 32, p: 32, n: 41, link: "Germanium_sarvpedia.html" },
+            { no: 33, name: "Arsenic", hi: "आर्सेनिक", mass: "74.922", e: 33, p: 33, n: 42, link: "Arsenic_sarvpedia.html" },
+            { no: 34, name: "Selenium", hi: "सेलेनियम", mass: "78.971", e: 34, p: 34, n: 45, link: "Selenium_sarvpedia.html" },
+            { no: 35, name: "Bromine", hi: "ब्रोमीन", mass: "79.904", e: 35, p: 35, n: 45, link: "Bromine_sarvpedia.html" },
+            { no: 36, name: "Krypton", hi: "क्रिप्टॉन", mass: "83.798", e: 36, p: 36, n: 48, link: "Krypton_sarvpedia.html" },
+            { no: 37, name: "Rubidium", hi: "रुबिडियम", mass: "85.468", e: 37, p: 37, n: 48, link: "Rubidium_sarvpedia.html" },
+            { no: 38, name: "Strontium", hi: "स्ट्रोंशियम", mass: "87.62", e: 38, p: 38, n: 50, link: "Strontium_sarvpedia.html" },
+            { no: 39, name: "Yttrium", hi: "यिट्रियम", mass: "88.906", e: 39, p: 39, n: 50, link: "Yttrium_sarvpedia.html" },
+            { no: 40, name: "Zirconium", hi: "ज़िर्कोनियम", mass: "91.224", e: 40, p: 40, n: 51, link: "Zirconium_sarvpedia.html" },
+            { no: 41, name: "Niobium", hi: "नाइओबियम", mass: "92.906", e: 41, p: 41, n: 52, link: "Niobium_sarvpedia.html" },
+            { no: 42, name: "Molybdenum", hi: "मॉलिब्डेनम", mass: "95.95", e: 42, p: 42, n: 54, link: "Molybdenum_sarvpedia.html" },
+            { no: 43, name: "Technetium", hi: "टेक्नीशियम", mass: "98", e: 43, p: 43, n: 55, link: "Technetium_sarvpedia.html" },
+            { no: 44, name: "Ruthenium", hi: "रूथेनियम", mass: "101.07", e: 44, p: 44, n: 57, link: "Ruthenium_sarvpedia.html" },
+            { no: 45, name: "Rhodium", hi: "रोडियम", mass: "102.91", e: 45, p: 45, n: 58, link: "Rhodium_sarvpedia.html" },
+            { no: 46, name: "Palladium", hi: "पैलेडियम", mass: "106.42", e: 46, p: 46, n: 60, link: "Palladium_sarvpedia.html" },
+            { no: 47, name: "Silver", hi: "चाँदी", mass: "107.868", e: 47, p: 47, n: 61, link: "Silver_sarvpedia.html" },
+            { no: 48, name: "Cadmium", hi: "कैडमियम", mass: "112.414", e: 48, p: 48, n: 64, link: "Cadmium_sarvpedia.html" },
+            { no: 49, name: "Indium", hi: "इंडियम", mass: "114.818", e: 49, p: 49, n: 66, link: "Indium_sarvpedia.html" },
+            { no: 50, name: "Tin", hi: "टिन", mass: "118.71", e: 50, p: 50, n: 69, link: "Tin_sarvpedia.html" },
+            { no: 51, name: "Antimony", hi: "एंटीमनी", mass: "121.76", e: 51, p: 51, n: 71, link: "Antimony_sarvpedia.html" },
+            { no: 52, name: "Tellurium", hi: "टेलुरियम", mass: "127.6", e: 52, p: 52, n: 73, link: "Tellurium_sarvpedia.html" },
+            { no: 53, name: "Iodine", hi: "आयोडीन", mass: "126.904", e: 53, p: 53, n: 74, link: "Iodine_sarvpedia.html" },
+            { no: 54, name: "Xenon", hi: "ज़ेनॉन", mass: "131.293", e: 54, p: 54, n: 77, link: "Xenon_sarvpedia.html" },
+            { no: 55, name: "Caesium", hi: "सीज़ियम", mass: "132.905", e: 55, p: 55, n: 78, link: "Caesium_sarvpedia.html" },
+            { no: 56, name: "Barium", hi: "बेरियम", mass: "137.327", e: 56, p: 56, n: 80, link: "Barium_sarvpedia.html" },
+            { no: 57, name: "Lanthanum", hi: "लैंथेनम", mass: "138.905", e: 57, p: 57, n: 82, link: "Lanthanum_sarvpedia.html" },
+            { no: 58, name: "Cerium", hi: "सीरियम", mass: "140.116", e: 58, p: 58, n: 83, link: "Cerium_sarvpedia.html" },
+            { no: 59, name: "Praseodymium", hi: "प्रेज़ियोडिमियम", mass: "140.908", e: 59, p: 59, n: 84, link: "Praseodymium_sarvpedia.html" },
+            { no: 60, name: "Neodymium", hi: "नियोडिमियम", mass: "144.242", e: 60, p: 60, n: 86, link: "Neodymium_sarvpedia.html" },
+            { no: 61, name: "Promethium", hi: "प्रोमेथियम", mass: "145", e: 61, p: 61, n: 88, link: "Promethium_sarvpedia.html" },
+            { no: 62, name: "Samarium", hi: "सैमेरियम", mass: "150.36", e: 62, p: 62, n: 89, link: "Samarium_sarvpedia.html" },
+            { no: 63, name: "Europium", hi: "युरोपियम", mass: "151.964", e: 63, p: 63, n: 92, link: "Europium_sarvpedia.html" },
+            { no: 64, name: "Gadolinium", hi: "गैडोलिनियम", mass: "157.25", e: 64, p: 64, n: 93, link: "Gadolinium_sarvpedia.html" },
+            { no: 65, name: "Terbium", hi: "टर्बियम", mass: "158.925", e: 65, p: 65, n: 94, link: "Terbium_sarvpedia.html" },
+            { no: 66, name: "Dysprosium", hi: "डिस्प्रोसियम", mass: "162.5", e: 66, p: 66, n: 96, link: "Dysprosium_sarvpedia.html" },
+            { no: 67, name: "Holmium", hi: "होल्मियम", mass: "164.930", e: 67, p: 67, n: 97, link: "Holmium_sarvpedia.html" },
+            { no: 68, name: "Erbium", hi: "एर्बियम", mass: "167.259", e: 68, p: 68, n: 99, link: "Erbium_sarvpedia.html" },
+            { no: 69, name: "Thulium", hi: "थुलियम", mass: "168.934", e: 69, p: 69, n: 100, link: "Thulium_sarvpedia.html" },
+            { no: 70, name: "Ytterbium", hi: "यिटरबियम", mass: "173.04", e: 70, p: 70, n: 103, link: "Ytterbium_sarvpedia.html" },
+            { no: 71, name: "Lutetium", hi: "ल्युटेशियम", mass: "175.0", e: 71, p: 71, n: 104, link: "Lutetium_sarvpedia.html" },
+            { no: 72, name: "Hafnium", hi: "हेफ्नियम", mass: "178.49", e: 72, p: 72, n: 106, link: "Hafnium_sarvpedia.html" },
+            { no: 73, name: "Tantalum", hi: "टैंटलम", mass: "180.948", e: 73, p: 73, n: 108, link: "Tantalum_sarvpedia.html" },
+            { no: 74, name: "Tungsten", hi: "टंगस्टन", mass: "183.84", e: 74, p: 74, n: 110, link: "Tungsten_sarvpedia.html" },
+            { no: 75, name: "Rhenium", hi: "रेनियम", mass: "186.207", e: 75, p: 75, n: 111, link: "Rhenium_sarvpedia.html" },
+            { no: 76, name: "Osmium", hi: "ऑस्मियम", mass: "190.23", e: 76, p: 76, n: 113, link: "Osmium_sarvpedia.html" },
+            { no: 77, name: "Iridium", hi: "इरिडियम", mass: "192.217", e: 77, p: 77, n: 115, link: "Iridium_sarvpedia.html" },
+            { no: 78, name: "Platinum", hi: "प्लैटिनम", mass: "195.084", e: 78, p: 78, n: 117, link: "Platinum_sarvpedia.html" },
+            { no: 79, name: "Gold", hi: "सोना", mass: "196.967", e: 79, p: 79, n: 118, link: "Gold_sarvpedia.html" },
+            { no: 80, name: "Mercury", hi: "पारा", mass: "200.592", e: 80, p: 80, n: 120, link: "Mercury_sarvpedia.html" },
+            { no: 81, name: "Thallium", hi: "थैलियम", mass: "204.38", e: 81, p: 81, n: 121, link: "Thallium_sarvpedia.html" },
+            { no: 82, name: "Lead", hi: "सीसा", mass: "207.2", e: 82, p: 82, n: 123, link: "Lead_sarvpedia.html" },
+            { no: 83, name: "Bismuth", hi: "बिस्मथ", mass: "208.980", e: 83, p: 83, n: 126, link: "Bismuth_sarvpedia.html" },
+            { no: 84, name: "Polonium", hi: "पोलोनियम", mass: "209", e: 84, p: 84, n: 127, link: "Polonium_sarvpedia.html" },
+            { no: 85, name: "Astatine", hi: "एस्टेटीन", mass: "210", e: 85, p: 85, n: 130, link: "Astatine_sarvpedia.html" },
+            { no: 86, name: "Radon", hi: "रेडॉन", mass: "222", e: 86, p: 86, n: 132, link: "Radon_sarvpedia.html" },
+            { no: 87, name: "Francium", hi: "फ्रांसियम", mass: "223", e: 87, p: 87, n: 133, link: "Francium_sarvpedia.html" },
+            { no: 88, name: "Radium", hi: "रेडियम", mass: "226.025", e: 88, p: 88, n: 136, link: "Radium_sarvpedia.html" },
+            { no: 89, name: "Actinium", hi: "एक्टिनियम", mass: "227", e: 89, p: 89, n: 138, link: "Actinium_sarvpedia.html" },
+            { no: 90, name: "Thorium", hi: "थोरियम", mass: "232.038", e: 90, p: 90, n: 140, link: "Thorium_sarvpedia.html" },
+            { no: 91, name: "Protactinium", hi: "प्रोटैक्टिनियम", mass: "231.036", e: 91, p: 91, n: 143, link: "Protactinium_sarvpedia.html" },
+            { no: 92, name: "Uranium", hi: "यूरेनियम", mass: "238.029", e: 92, p: 92, n: 145, link: "Uranium_sarvpedia.html" },
+            { no: 93, name: "Neptunium", hi: "नेप्च्यूनियम", mass: "237", e: 93, p: 93, n: 148, link: "Neptunium_sarvpedia.html" },
+            { no: 94, name: "Plutonium", hi: "प्लूटोनियम", mass: "244", e: 94, p: 94, n: 150, link: "Plutonium_sarvpedia.html" },
+            { no: 95, name: "Americium", hi: "अमेरिसियम", mass: "243", e: 95, p: 95, n: 152, link: "Americium_sarvpedia.html" },
+            { no: 96, name: "Curium", hi: "क्यूरियम", mass: "247", e: 96, p: 96, n: 155, link: "Curium_sarvpedia.html" },
+            { no: 97, name: "Berkelium", hi: "बर्केलियम", mass: "247", e: 97, p: 97, n: 157, link: "Berkelium_sarvpedia.html" },
+            { no: 98, name: "Californium", hi: "कैलिफ़ोर्नियम", mass: "251", e: 98, p: 98, n: 159, link: "Californium_sarvpedia.html" },
+            { no: 99, name: "Einsteinium", hi: "आइंस्टीनियम", mass: "252", e: 99, p: 99, n: 161, link: "Einsteinium_sarvpedia.html" },
+            { no: 100, name: "Fermium", hi: "फर्मियम", mass: "257", e: 100, p: 100, n: 164, link: "Fermium_sarvpedia.html" },
+            { no: 101, name: "Mendelevium", hi: "मेंडेलीवियम", mass: "258", e: 101, p: 101, n: 165, link: "Mendelevium_sarvpedia.html" },
+            { no: 102, name: "Nobelium", hi: "नोबेलियम", mass: "259", e: 102, p: 102, n: 167, link: "Nobelium_sarvpedia.html" },
+            { no: 103, name: "Lawrencium", hi: "लॉरेंसियम", mass: "262", e: 103, p: 103, n: 169, link: "Lawrencium_sarvpedia.html" },
+            { no: 104, name: "Rutherfordium", hi: "रूथरफोर्डियम", mass: "267", e: 104, p: 104, n: 170, link: "Rutherfordium_sarvpedia.html" },
+            { no: 105, name: "Dubnium", hi: "डब्नियम", mass: "270", e: 105, p: 105, n: 173, link: "Dubnium_sarvpedia.html" },
+            { no: 106, name: "Seaborgium", hi: "सीबोर्गियम", mass: "271", e: 106, p: 106, n: 175, link: "Seaborgium_sarvpedia.html" },
+            { no: 107, name: "Bohrium", hi: "बोहरियम", mass: "270", e: 107, p: 107, n: 177, link: "Bohrium_sarvpedia.html" },
+            { no: 108, name: "Hassium", hi: "हैसियम", mass: "277", e: 108, p: 108, n: 178, link: "Hassium_sarvpedia.html" },
+            { no: 109, name: "Meitnerium", hi: "माइटनरियम", mass: "278", e: 109, p: 109, n: 180, link: "Meitnerium_sarvpedia.html" },
+            { no: 110, name: "Darmstadtium", hi: "डार्मस्टेडटियम", mass: "281", e: 110, p: 110, n: 181, link: "Darmstadtium_sarvpedia.html" },
+            { no: 111, name: "Roentgenium", hi: "रोएंटजेनियम", mass: "280", e: 111, p: 111, n: 183, link: "Roentgenium_sarvpedia.html" },
+            { no: 112, name: "Copernicium", hi: "कोपरनिसियम", mass: "285", e: 112, p: 112, n: 185, link: "Copernicium_sarvpedia.html" },
+            { no: 113, name: "Nihonium", hi: "निहोनियम", mass: "284", e: 113, p: 113, n: 187, link: "Nihonium_sarvpedia.html" },
+            { no: 114, name: "Flerovium", hi: "फ्लेरोवियम", mass: "289", e: 114, p: 114, n: 188, link: "Flerovium_sarvpedia.html" },
+            { no: 115, name: "Moscovium", hi: "मॉस्कोवियम", mass: "288", e: 115, p: 115, n: 190, link: "Moscovium_sarvpedia.html" },
+            { no: 116, name: "Livermorium", hi: "लिवरमोरियम", mass: "293", e: 116, p: 116, n: 191, link: "Livermorium_sarvpedia.html" },
+            { no: 117, name: "Tennessine", hi: "टेनेसीन", mass: "294", e: 117, p: 117, n: 193, link: "Tennessine_sarvpedia.html" },
+            { no: 118, name: "Oganesson", hi: "ओगेनेसन", mass: "294", e: 118, p: 118, n: 176, link: "Oganesson_sarvpedia.html" }
+        ];
 
-        const searchBar = document.getElementById("searchBar");
-        const clearBtn = document.getElementById("clearBtn");
-        const suggestions = document.getElementById("suggestions");
-        const tableBody = document.getElementById("elementTable");
-
-        // Populate table
-        function populateTable(data) {
-            tableBody.innerHTML = "";
-            data.forEach(el => {
-                const row = document.createElement("tr");
-                const nameCell = el.link 
-                    ? `<td><a href="${el.link}" target="_blank">${el.name}</a></td>` 
-                    : `<td>${el.name}</td>`;
-                row.innerHTML = `
-                    <td>${el.atomicNo}</td>
-                    ${nameCell}
-                    <td>${el.mass}</td>
-                    <td>${el.electrons}</td>
-                    <td>${el.protons}</td>
-                    <td>${el.neutrons}</td>
-                `;
-                tableBody.appendChild(row);
-            });
+        /* ---------- सहायक ---------- */
+        function toHindiNum(n) {
+            const map = { '0':'०','1':'१','2':'२','3':'३','4':'४','5':'५','6':'६','7':'७','8':'८','9':'९','.':'·' };
+            return String(n).split('').map(c => map[c] || c).join('');
         }
 
-        // Initial population
-        populateTable(elements);
+        function escapeHtml(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
+        }
 
-        // Search and filter with suggestions
-        searchBar.addEventListener("input", function() {
-            const query = this.value.toLowerCase();
-            const filtered = elements.filter(el => 
-                el.name.toLowerCase().includes(query) || 
-                el.atomicNo.toString().includes(query)
+        /* ---------- तालिका ---------- */
+        const tbody = document.getElementById('elTableBody');
+        const empty = document.getElementById('elEmpty');
+        const search = document.getElementById('elSearch');
+        const clear = document.getElementById('elClear');
+
+        function populate(list) {
+            tbody.innerHTML = '';
+            if (!list.length) {
+                empty.style.display = 'block';
+                return;
+            }
+            empty.style.display = 'none';
+            const frag = document.createDocumentFragment();
+            list.forEach(el => {
+                const tr = document.createElement('tr');
+                tr.innerHTML =
+                    '<td>' + toHindiNum(el.no) + '</td>' +
+                    '<td class="el-name">' +
+                        '<a href="' + escapeHtml(el.link) + '">' + escapeHtml(el.name) + '</a>' +
+                        '<span class="el-hindi">' + escapeHtml(el.hi) + '</span>' +
+                    '</td>' +
+                    '<td class="el-mass">' + toHindiNum(el.mass) + '</td>' +
+                    '<td class="el-num">' + toHindiNum(el.e) + '</td>' +
+                    '<td class="el-num">' + toHindiNum(el.p) + '</td>' +
+                    '<td class="el-num">' + toHindiNum(el.n) + '</td>';
+                frag.appendChild(tr);
+            });
+            tbody.appendChild(frag);
+        }
+
+        populate(elements);
+
+        /* ---------- खोज — English + हिंदी दोनों ---------- */
+        search.addEventListener('input', () => {
+            const q = search.value.toLowerCase().trim();
+            clear.classList.toggle('visible', search.value.length > 0);
+            if (!q) { populate(elements); return; }
+
+            const filtered = elements.filter(el =>
+                el.name.toLowerCase().includes(q) ||
+                el.hi.includes(search.value.trim()) ||
+                String(el.no) === q ||
+                toHindiNum(el.no) === q
             );
+            populate(filtered);
+        });
 
-            // Update table
-            populateTable(filtered);
+        clear.addEventListener('click', () => {
+            search.value = '';
+            clear.classList.remove('visible');
+            populate(elements);
+            search.focus();
+        });
 
-            // Show/hide clear button
-            clearBtn.classList.toggle("active", this.value.length > 0);
-
-            // Show suggestions
-            if (query.length > 0) {
-                suggestions.style.display = "block";
-                suggestions.innerHTML = "";
-                filtered.slice(0, 5).forEach(el => {
-                    const suggestion = document.createElement("div");
-                    suggestion.textContent = `${el.atomicNo}. ${el.name}`;
-                    suggestion.addEventListener("click", () => {
-                        searchBar.value = el.name;
-                        populateTable([el]);
-                        suggestions.style.display = "none";
-                        clearBtn.classList.add("active");
-                    });
-                    suggestions.appendChild(suggestion);
-                });
-            } else {
-                suggestions.style.display = "none";
+        /* ---------- रूप (थीम) ---------- */
+        (function () {
+            const KEY = 'sarvwigyan-theme';
+            function apply(t) {
+                if (t !== 'dark' && t !== 'light' && t !== 'pure') t = 'light';
+                document.documentElement.setAttribute('data-theme', t);
+                try { localStorage.setItem(KEY, t); } catch (_) {}
             }
-        });
-
-        // Clear button functionality
-        clearBtn.addEventListener("click", () => {
-            searchBar.value = "";
-            clearBtn.classList.remove("active");
-            suggestions.style.display = "none";
-            populateTable(elements);
-            searchBar.focus();
-        });
-
-        // Hide suggestions when clicking outside
-        document.addEventListener("click", (e) => {
-            if (!searchBar.contains(e.target) && !suggestions.contains(e.target) && !clearBtn.contains(e.target)) {
-                suggestions.style.display = "none";
-            }
-        });
+            try {
+                const s = localStorage.getItem(KEY);
+                if (s === 'dark' || s === 'light' || s === 'pure') apply(s);
+            } catch (_) {}
+            const btn = document.getElementById('tpTheme');
+            if (btn) btn.addEventListener('click', function () {
+                const c = document.documentElement.getAttribute('data-theme') || 'light';
+                apply(c === 'dark' ? 'light' : 'dark');
+            });
+        })();
     </script>
+
+    <!-- ═══════════════════ ECOSYSTEM FOOTER ═══════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-status" lang="hi">
+                <span class="footer-status-indicator" aria-hidden="true"></span>
+                सभी प्रणालियाँ सक्रिय · <span lang="en" class="term mono">build v3.4</span>
+            </div>
+
+            <p class="footer-copyright" lang="hi">© २०२६ सर्वविज्ञान</p>
+
+            <nav class="footer-links" aria-label="पादलेख नेविगेशन">
+                <a href="https://sarvwigyan.github.io/" lang="hi">मुख्य पृष्ठ</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="../index.html" lang="hi">सर्वपीडिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/sarvstore/" lang="hi">कोष</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/feedback.html" lang="hi">प्रतिक्रिया</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/privacy-policy.html" lang="hi">गोपनीयता</a>
+                <span class="breadcrumb-separator" aria-hidden="true">·</span>
+                <a href="https://sarvwigyan.github.io/Community/community.html" lang="hi">संघ</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/lang-switcher.js"></script>
 </body>
 </html>
